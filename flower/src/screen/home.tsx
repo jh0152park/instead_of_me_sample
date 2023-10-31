@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import styled from "styled-components";
 import { AnimatePresence } from "framer-motion";
+import { IncomingMessage } from "http";
 
 const Box = styled(motion.div)`
     width: 100%;
@@ -21,7 +22,7 @@ const Image = styled(motion.img)`
 
 const ImageVariants = {
     initial: {
-        y: -window.screen.availHeight - 5,
+        y: window.screen.availHeight,
         opacity: 0.1,
     },
     visible: {
@@ -29,17 +30,17 @@ const ImageVariants = {
         opacity: 1,
     },
     exit: {
-        y: window.screen.availHeight + 5,
+        y: -window.screen.availHeight,
         opacity: 0.1,
     },
 };
 
 export default function Home() {
     const images = [
-        "https://github.com/jh0152park/instead_of_me_sample/blob/main/flower/images/image1.jpg?raw=true",
-        "https://github.com/jh0152park/instead_of_me_sample/blob/main/flower/images/image2.jpg?raw=true",
-        "https://github.com/jh0152park/instead_of_me_sample/blob/main/flower/images/image3.jpg?raw=true",
-        "https://github.com/jh0152park/instead_of_me_sample/blob/main/flower/images/image4.jpg?raw=true",
+        require(`../resources/images/image1.jpg`),
+        require(`../resources/images/image2.jpg`),
+        require(`../resources/images/image3.jpg`),
+        require(`../resources/images/image4.jpg`),
     ];
 
     const [imageIndex, setImageIndex] = useState<number>(0);
@@ -72,6 +73,7 @@ export default function Home() {
                                 animate="visible"
                                 exit="exit"
                                 transition={{ type: "tween", duration: 2 }}
+                                layout
                             />
                         ) : null
                     )}
