@@ -1,6 +1,6 @@
 import { Box, Text } from "@chakra-ui/react";
 
-export default function QuotoButton() {
+export default function YelloButton({ text }: { text: string }) {
     return (
         <Box
             display={"flex"}
@@ -14,7 +14,7 @@ export default function QuotoButton() {
             cursor={"pointer"}
         >
             <Text fontSize={"16px"} fontWeight={"semibold"}>
-                Get a Quoto
+                {text}
             </Text>
         </Box>
     );
