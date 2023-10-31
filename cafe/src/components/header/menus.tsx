@@ -24,6 +24,9 @@ export default function Menus() {
                     color: "rgba(255, 255, 255, 0.4)",
                     transition: "all 0.2s linear",
                 }}
+                onClick={() => {
+                    navigate("/cafes");
+                }}
             >
                 <Text fontWeight="bold">CAFES</Text>
             </Center>
