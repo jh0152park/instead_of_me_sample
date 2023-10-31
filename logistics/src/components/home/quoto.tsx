@@ -1,5 +1,5 @@
 import { Box, HStack, Image, Text, VStack } from "@chakra-ui/react";
-import QuotoButton from "../common/quotoButton";
+import YelloButton from "../common/yelloButton";
 
 export default function Quoto() {
     const imagePath =
@@ -62,7 +62,7 @@ export default function Quoto() {
                     </VStack>
 
                     <HStack mt={"10px"} spacing={5}>
-                        <QuotoButton />
+                        <YelloButton text="Get a Quoto" />
 
                         <Box cursor={"pointer"} _hover={{ color: "#FC630790" }}>
                             <Text fontSize={"16px"} fontWeight={"semibold"}>

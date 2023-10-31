@@ -1,6 +1,6 @@
-import { Collapse, HStack } from "@chakra-ui/react";
+import { HStack } from "@chakra-ui/react";
 import Menu from "./menu";
-import QuotoButton from "../common/quotoButton";
+import YelloButton from "../common/yelloButton";
 import Logo from "./logo";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { useState } from "react";
@@ -36,7 +36,7 @@ export default function Header() {
             <Logo />
             <HStack spacing={15}>
                 <Menu />
-                <QuotoButton />
+                <YelloButton text="Get a Quoto" />
             </HStack>
         </HStack>
     );
