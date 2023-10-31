@@ -30,6 +30,10 @@ export default function Header() {
             setBackgroundColor("white");
             setTextColor("black");
             setMenuHoverColor("#FC6307");
+        } else {
+            setBackgroundColor("transparent");
+            setTextColor("white");
+            setMenuHoverColor("#ffffff60");
         }
     }, [params.pathname]);
 
