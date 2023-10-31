@@ -1,6 +1,6 @@
 import { Heading } from "@chakra-ui/react";
 import { Helmet } from "react-helmet";
-import Layer from "../components/home/layer";
+import Layers from "../components/home/layers";
 
 export default function Home() {
     return (
@@ -9,7 +9,7 @@ export default function Home() {
                 <title>김병섭커피로스터즈 공식홈페이지</title>
             </Helmet>
 
-            <Layer />
+            <Layers />
         </>
     );
 }
