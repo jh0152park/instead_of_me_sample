@@ -1,3 +1,60 @@
+import { Button, Center, Stack, Text } from "@chakra-ui/react";
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { Helmet } from "react-helmet";
+import styled from "styled-components";
+
+const Box = styled(motion.div)`
+    width: 100%;
+    height: 100vh;
+    position: relative;
+`;
+
+const Image = styled(motion.img)`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+`;
+
 export default function Home() {
-    return <h1>HOME</h1>;
+    const images = [
+        "https://github.com/jh0152park/instead_of_me_sample/blob/main/flower/images/image1.jpg?raw=true",
+        "https://github.com/jh0152park/instead_of_me_sample/blob/main/flower/images/image2.jpg?raw=true",
+        "https://github.com/jh0152park/instead_of_me_sample/blob/main/flower/images/image3.jpg?raw=true",
+        "https://github.com/jh0152park/instead_of_me_sample/blob/main/flower/images/image4.jpg?raw=true",
+    ];
+
+    const [imageIndex, setImageIndex] = useState<number>(0);
+
+    function updateImageIndex() {
+        if (imageIndex >= 3) setImageIndex(0);
+        else setImageIndex((prev) => prev + 1);
+        return;
+    }
+
+    return (
+        <>
+            <Helmet>
+                <title>My Flower</title>
+            </Helmet>
+
+            <Box>
+                <Button
+                    onClick={updateImageIndex}
+                    position="absolute"
+                    top={"100px"}
+                >
+                    Change
+                </Button>
+
+                <Center w="100%" position="absolute" top="50px">
+                    <Text fontFamily={"Cormorant"} fontSize={"50px"}>
+                        My Flower
+                    </Text>
+                </Center>
+
+                <Image src={images[imageIndex]} />
+            </Box>
+        </>
+    );
 }
