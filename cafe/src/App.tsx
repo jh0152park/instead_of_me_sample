@@ -4,6 +4,7 @@ import Home from "./screen/home";
 import NotFound from "./components/notfound";
 import About from "./screen/about";
 import Cafes from "./screen/cafes";
+import Contact from "./screen/contact";
 
 const router = createBrowserRouter([
     {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
             {
                 path: "cafes",
                 element: <Cafes />,
+            },
+            {
+                path: "contact",
+                element: <Contact />,
             },
         ],
     },
