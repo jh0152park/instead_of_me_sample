@@ -1,6 +1,7 @@
-import { Box, HStack, Text } from "@chakra-ui/react";
+import { HStack } from "@chakra-ui/react";
 import Menu from "./menu";
 import QuotoButton from "../common/quotoButton";
+import Logo from "./logo";
 
 export default function Header() {
     return (
@@ -12,8 +13,7 @@ export default function Header() {
             top={0}
             justifyContent={"space-between"}
         >
-            <Text>Logo</Text>
-
+            <Logo />
             <HStack spacing={15}>
                 <Menu />
                 <QuotoButton />
