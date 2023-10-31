@@ -1,3 +1,9 @@
+import Quoto from "../components/home/quoto";
+
 export default function Home() {
-    return <div>Home</div>;
+    return (
+        <div>
+            <Quoto />
+        </div>
+    );
 }
