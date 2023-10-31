@@ -6,7 +6,12 @@ export default function Quoto() {
         "https://github.com/jh0152park/instead_of_me_sample/blob/yuhyeon/logistics/images/quoto.png?raw=true";
 
     return (
-        <Box position={"relative"} w={"100dvw"} height={"100dvh"}>
+        <Box
+            position={"relative"}
+            w={"100dvw"}
+            height={"100dvh"}
+            color={"white"}
+        >
             <Box
                 w={"100%"}
                 h={"100%"}
