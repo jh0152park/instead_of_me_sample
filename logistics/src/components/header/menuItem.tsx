@@ -1,12 +1,28 @@
 import { Box, Text } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
-export default function MenuItem({ label }: { label: string }) {
+export default function MenuItem({
+    label,
+    path,
+    menuHoverColor,
+}: {
+    label: string;
+    path: string;
+    menuHoverColor: string;
+}) {
+    const navigate = useNavigate();
+
+    function onClickMenu() {
+        navigate(path);
+    }
+
     return (
         <Box
-            _hover={{ color: "#ffffff60" }}
+            _hover={{ color: menuHoverColor }}
             cursor={"pointer"}
             px={"20px"}
             py={"10px"}
+            onClick={onClickMenu}
         >
             <Text fontSize={"16px"} fontWeight={"semibold"}>
                 {label}
