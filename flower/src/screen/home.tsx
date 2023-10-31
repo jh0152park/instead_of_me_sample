@@ -1,8 +1,9 @@
-import { Button, Center, Stack, Text } from "@chakra-ui/react";
+import { Button, Center, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Helmet } from "react-helmet";
 import styled from "styled-components";
+import { AnimatePresence } from "framer-motion";
 
 const Box = styled(motion.div)`
     width: 100%;
@@ -14,7 +15,31 @@ const Image = styled(motion.img)`
     width: 100%;
     height: 100%;
     object-fit: cover;
+    position: absolute;
+    top: 0;
 `;
+
+const ImageVariants = {
+    initial: {
+        y: window.screen.availHeight * -1 - 10,
+        // opacitiy: 0,
+        // scale: 0,
+    },
+    visible: {
+        y: 0,
+        // opacitiy: 1,
+        // scale: 1,
+        // rotateZ: 360,
+        transition: {
+            duration: 1.5,
+        },
+    },
+    exit: {
+        // opacity: 0,
+        // scale: 0,
+        y: window.screen.availHeight + 10,
+    },
+};
 
 export default function Home() {
     const images = [
@@ -39,10 +64,26 @@ export default function Home() {
             </Helmet>
 
             <Box>
+                <AnimatePresence mode="wait">
+                    {images.map((image, index) =>
+                        index === imageIndex ? (
+                            <Image
+                                key={index}
+                                src={image}
+                                variants={ImageVariants}
+                                initial="initial"
+                                animate="visible"
+                                exit="exit"
+                            />
+                        ) : null
+                    )}
+                </AnimatePresence>
+
                 <Button
                     onClick={updateImageIndex}
                     position="absolute"
                     top={"100px"}
+                    left={"100px"}
                 >
                     Change
                 </Button>
@@ -52,8 +93,6 @@ export default function Home() {
                         My Flower
                     </Text>
                 </Center>
-
-                <Image src={images[imageIndex]} />
             </Box>
         </>
     );
