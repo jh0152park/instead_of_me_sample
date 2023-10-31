@@ -7,11 +7,11 @@ export default function QuotoButton() {
             alignItems={"center"}
             justifyContent={"center"}
             backgroundColor={"#FC6307"}
+            color={"white"}
             px={"15px"}
             py={"15px"}
             borderRadius={"10px"}
             cursor={"pointer"}
-            _hover={{ backgroundColor: "#FC6307" }}
         >
             <Text fontSize={"16px"} fontWeight={"semibold"}>
                 Get a Quoto
