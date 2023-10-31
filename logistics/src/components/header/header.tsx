@@ -12,6 +12,7 @@ export default function Header() {
             px={"40px"}
             top={0}
             justifyContent={"space-between"}
+            zIndex={10}
         >
             <Logo />
             <HStack spacing={15}>
