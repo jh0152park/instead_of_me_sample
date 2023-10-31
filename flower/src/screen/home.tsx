@@ -68,7 +68,7 @@ export default function Home() {
                                 initial="initial"
                                 animate="visible"
                                 exit="exit"
-                                transition={{ type: "tween", duration: 3 }}
+                                transition={{ type: "tween", duration: 2 }}
                             />
                         ) : null
                     )}
