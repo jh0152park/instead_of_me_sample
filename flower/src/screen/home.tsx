@@ -1,8 +1,9 @@
-import { Button, Center, Stack, Text } from "@chakra-ui/react";
+import { Button, Center, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import styled from "styled-components";
+import { AnimatePresence } from "framer-motion";
 
 const Box = styled(motion.div)`
     width: 100%;
@@ -14,7 +15,21 @@ const Image = styled(motion.img)`
     width: 100%;
     height: 100%;
     object-fit: cover;
+    position: absolute;
+    top: 0;
 `;
+
+const ImageVariants = {
+    initial: {
+        y: -window.screen.availHeight - 5,
+    },
+    visible: {
+        y: 0,
+    },
+    exit: {
+        y: window.screen.availHeight + 5,
+    },
+};
 
 export default function Home() {
     const images = [
@@ -32,6 +47,10 @@ export default function Home() {
         return;
     }
 
+    useEffect(() => {
+        setTimeout(updateImageIndex, 5000);
+    }, [imageIndex]);
+
     return (
         <>
             <Helmet>
@@ -39,10 +58,27 @@ export default function Home() {
             </Helmet>
 
             <Box>
+                <AnimatePresence initial={false}>
+                    {images.map((image, index) =>
+                        index === imageIndex ? (
+                            <Image
+                                key={index}
+                                src={image}
+                                variants={ImageVariants}
+                                initial="initial"
+                                animate="visible"
+                                exit="exit"
+                                transition={{ type: "tween", duration: 3 }}
+                            />
+                        ) : null
+                    )}
+                </AnimatePresence>
+
                 <Button
                     onClick={updateImageIndex}
                     position="absolute"
                     top={"100px"}
+                    left={"100px"}
                 >
                     Change
                 </Button>
@@ -52,8 +88,6 @@ export default function Home() {
                         My Flower
                     </Text>
                 </Center>
-
-                <Image src={images[imageIndex]} />
             </Box>
         </>
     );
