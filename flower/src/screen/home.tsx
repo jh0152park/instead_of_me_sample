@@ -1,6 +1,6 @@
 import { Button, Center, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import styled from "styled-components";
 import { AnimatePresence } from "framer-motion";
@@ -21,23 +21,13 @@ const Image = styled(motion.img)`
 
 const ImageVariants = {
     initial: {
-        y: window.screen.availHeight * -1 - 10,
-        // opacitiy: 0,
-        // scale: 0,
+        y: -window.screen.availHeight - 5,
     },
     visible: {
         y: 0,
-        // opacitiy: 1,
-        // scale: 1,
-        // rotateZ: 360,
-        transition: {
-            duration: 1.5,
-        },
     },
     exit: {
-        // opacity: 0,
-        // scale: 0,
-        y: window.screen.availHeight + 10,
+        y: window.screen.availHeight + 5,
     },
 };
 
@@ -57,6 +47,10 @@ export default function Home() {
         return;
     }
 
+    useEffect(() => {
+        setTimeout(updateImageIndex, 5000);
+    }, [imageIndex]);
+
     return (
         <>
             <Helmet>
@@ -64,7 +58,7 @@ export default function Home() {
             </Helmet>
 
             <Box>
-                <AnimatePresence mode="wait">
+                <AnimatePresence initial={false}>
                     {images.map((image, index) =>
                         index === imageIndex ? (
                             <Image
@@ -74,6 +68,7 @@ export default function Home() {
                                 initial="initial"
                                 animate="visible"
                                 exit="exit"
+                                transition={{ type: "tween", duration: 3 }}
                             />
                         ) : null
                     )}
