@@ -22,12 +22,15 @@ const Image = styled(motion.img)`
 const ImageVariants = {
     initial: {
         y: -window.screen.availHeight - 5,
+        opacity: 0.1,
     },
     visible: {
         y: 0,
+        opacity: 1,
     },
     exit: {
         y: window.screen.availHeight + 5,
+        opacity: 0.1,
     },
 };
 
