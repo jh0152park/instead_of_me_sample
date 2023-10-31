@@ -7,7 +7,7 @@ export default function SearchButton() {
             fontSize="25px"
             _hover={{
                 cursor: "pointer",
-                color: "rgba(0, 0, 0, 0.7)",
+                color: "rgba(255, 255, 255, 0.4)",
                 transition: "all 0.2s linear",
             }}
         >

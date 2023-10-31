@@ -9,7 +9,7 @@ export default function Menus() {
             <Center
                 _hover={{
                     cursor: "pointer",
-                    color: "rgba(0, 0, 0, 0.7)",
+                    color: "rgba(255, 255, 255, 0.4)",
                     transition: "all 0.2s linear",
                 }}
                 onClick={() => {
@@ -21,7 +21,7 @@ export default function Menus() {
             <Center
                 _hover={{
                     cursor: "pointer",
-                    color: "rgba(0, 0, 0, 0.7)",
+                    color: "rgba(255, 255, 255, 0.4)",
                     transition: "all 0.2s linear",
                 }}
             >
@@ -30,7 +30,7 @@ export default function Menus() {
             <Center
                 _hover={{
                     cursor: "pointer",
-                    color: "rgba(0, 0, 0, 0.7)",
+                    color: "rgba(255, 255, 255, 0.4)",
                     transition: "all 0.2s linear",
                 }}
             >

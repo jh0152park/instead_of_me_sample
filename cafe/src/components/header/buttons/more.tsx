@@ -8,7 +8,7 @@ export default function More() {
             fontWeight={"bold"}
             _hover={{
                 cursor: "pointer",
-                color: "rgba(0, 0, 0, 0.7)",
+                color: "rgba(255, 255, 255, 0.4)",
                 transition: "all 0.2s linear",
             }}
         >
