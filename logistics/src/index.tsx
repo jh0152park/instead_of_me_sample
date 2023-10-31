@@ -7,8 +7,8 @@ import { ChakraProvider } from "@chakra-ui/react";
 const GlobalStyle = createGlobalStyle`
     ${reset};
     body {
-        background-color: black;
-        color: whitesmoke;
+        background-color: white;
+        color: black;
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
 
