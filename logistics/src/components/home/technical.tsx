@@ -9,7 +9,7 @@ export default function Technical() {
         <Box
             position={"relative"}
             w={"100dvw"}
-            h={"80dvh"}
+            h={"100dvh"}
             backgroundColor={"white"}
             cursor={"pointer"}
         >

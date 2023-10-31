@@ -3,22 +3,35 @@ import Menu from "./menu";
 import YelloButton from "../common/yelloButton";
 import Logo from "./logo";
 import { useMotionValueEvent, useScroll } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 export default function Header() {
     const { scrollY } = useScroll();
     const [backgroundColor, setBackgroundColor] = useState("transparent");
+    const [menuHoverColor, setMenuHoverColor] = useState("#ffffff60");
     const [textColor, setTextColor] = useState("white");
+    const params = useLocation();
 
     useMotionValueEvent(scrollY, "change", (latest) => {
-        if (latest > 300) {
+        if (params.pathname !== "/" || latest > 300) {
             setBackgroundColor("white");
             setTextColor("black");
+            setMenuHoverColor("#FC6307");
         } else {
             setBackgroundColor("transparent");
             setTextColor("white");
+            setMenuHoverColor("#ffffff60");
         }
     });
+
+    useEffect(() => {
+        if (params.pathname !== "/") {
+            setBackgroundColor("white");
+            setTextColor("black");
+            setMenuHoverColor("#FC6307");
+        }
+    }, [params.pathname]);
 
     return (
         <HStack
@@ -34,8 +47,8 @@ export default function Header() {
             transition={"0.3s linear"}
         >
             <Logo />
-            <HStack spacing={15}>
-                <Menu />
+            <HStack spacing={"40px"}>
+                <Menu menuHoverColor={menuHoverColor} />
                 <YelloButton text="Get a Quoto" />
             </HStack>
         </HStack>
