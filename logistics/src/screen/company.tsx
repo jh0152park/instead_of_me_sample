@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { go_to_scroll_position } from "../utils/utils";
 import TechnicalValueSea from "../components/company/technicalValueSea";
+import TechnicalValueContainer from "../components/company/technicalValueContainer";
 
 export default function Company() {
     useEffect(() => {
@@ -10,6 +11,7 @@ export default function Company() {
     return (
         <div>
             <TechnicalValueSea />
+            <TechnicalValueContainer />
         </div>
     );
 }
