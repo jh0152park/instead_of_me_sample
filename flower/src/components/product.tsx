@@ -35,6 +35,7 @@ export default function Product({ product, price, image }: IProps) {
                     left="0"
                     bgColor="rgba(255, 255, 255, 0.7)"
                     opacity={isHover ? 1 : 0}
+                    transition="all 0.2s linear"
                 />
             </Box>
             <Center w="410px" h="100px">
