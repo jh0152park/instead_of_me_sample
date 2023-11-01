@@ -45,7 +45,7 @@ export default function Order() {
                         />
                         <Product
                             product="Bouquet"
-                            price={100000}
+                            price={"가격문의"}
                             image={require("../resources/images/order/bouquet.jpg")}
                         />
                     </HStack>

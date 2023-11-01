@@ -3,7 +3,7 @@ import { useState } from "react";
 
 interface IProps {
     product: string;
-    price: number;
+    price: number | string;
     image: string;
 }
 
@@ -42,8 +42,10 @@ export default function Product({ product, price, image }: IProps) {
                     <Text fontFamily={"Cormorant"} fontSize={"20px"}>
                         {product}
                     </Text>
-                    <Text fontFamily={"Cormorant"}>
-                        {price.toLocaleString("ko-KR")}원
+                    <Text fontFamily={"Cormorant"} fontSize={"13px"}>
+                        {typeof price === "number"
+                            ? `${price.toLocaleString("ko-KR")} 원`
+                            : price}
                     </Text>
                 </VStack>
             </Center>
