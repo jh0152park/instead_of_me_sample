@@ -8,7 +8,7 @@ export default function NotFound() {
     return (
         <>
             <Helmet>
-                <title>Not found / Instead of me</title>
+                <title>Not found</title>
             </Helmet>
             <Center
                 w="100%"
