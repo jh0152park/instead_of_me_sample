@@ -14,7 +14,7 @@ export default function Header() {
     const params = useLocation();
 
     useMotionValueEvent(scrollY, "change", (latest) => {
-        if (params.pathname !== "/" || latest > 300) {
+        if (params.pathname === "/our" || latest > 300) {
             setBackgroundColor("white");
             setTextColor("black");
             setMenuHoverColor("#FC6307");
@@ -26,7 +26,7 @@ export default function Header() {
     });
 
     useEffect(() => {
-        if (params.pathname !== "/") {
+        if (params.pathname === "/our") {
             setBackgroundColor("white");
             setTextColor("black");
             setMenuHoverColor("#FC6307");

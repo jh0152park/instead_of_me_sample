@@ -1,5 +1,5 @@
 import { Box, Text } from "@chakra-ui/react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function MenuItem({
     label,
@@ -11,6 +11,8 @@ export default function MenuItem({
     menuHoverColor: string;
 }) {
     const navigate = useNavigate();
+    const { pathname } = useLocation();
+    const fontWeight = pathname === path ? "extrabold" : "medium";
 
     function onClickMenu() {
         navigate(path);
@@ -25,7 +27,7 @@ export default function MenuItem({
             py={"10px"}
             onClick={onClickMenu}
         >
-            <Text fontSize={"16px"} fontWeight={"semibold"}>
+            <Text fontSize={"16px"} fontWeight={fontWeight}>
                 {label}
             </Text>
         </Box>
