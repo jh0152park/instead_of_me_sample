@@ -19,6 +19,7 @@ export default function MenuItem({
     return (
         <Box
             _hover={{ color: menuHoverColor }}
+            transition={"0.2s linear"}
             cursor={"pointer"}
             px={"20px"}
             py={"10px"}
