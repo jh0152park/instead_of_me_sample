@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet";
 import styled from "styled-components";
 import { AnimatePresence } from "framer-motion";
 import { IncomingMessage } from "http";
+import { useNavigate } from "react-router-dom";
 
 const Box = styled(motion.div)`
     width: 100%;
@@ -36,6 +37,8 @@ const ImageVariants = {
 };
 
 export default function Home() {
+    const navigate = useNavigate();
+
     const images = [
         require(`../resources/images/image1.jpg`),
         require(`../resources/images/image2.jpg`),
@@ -94,6 +97,9 @@ export default function Home() {
                         bgColor: "white",
                         color: "rgba(0, 0, 0, 0.7)",
                         transition: "all 0.2s linear",
+                    }}
+                    onClick={() => {
+                        navigate("/shop");
                     }}
                 >
                     <Text fontFamily={"Cormorant"} fontSize={"20px"}>

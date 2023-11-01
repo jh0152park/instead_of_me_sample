@@ -17,9 +17,13 @@ export default function Header() {
                 }}
                 _hover={{
                     cursor: "pointer",
-                    color: "rgba(255, 255, 255, 0.5)",
+                    color:
+                        location.pathname === "/"
+                            ? "rgba(255, 255, 255, 0.5)"
+                            : "rgba(0, 0, 0, 0.5)",
                     transition: "color 0.2s linear",
                 }}
+                color={location.pathname === "/" ? "white" : "black"}
             >
                 My Flower
             </Text>
