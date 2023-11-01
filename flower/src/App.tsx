@@ -6,6 +6,7 @@ import Home from "./screen/home";
 import Shop from "./screen/shop";
 import Order from "./screen/order";
 import Class from "./screen/class";
+import Directing from "./screen/directing";
 
 const router = createBrowserRouter([
     {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
             {
                 path: "class",
                 element: <Class />,
+            },
+            {
+                path: "directing",
+                element: <Directing />,
             },
         ],
     },
