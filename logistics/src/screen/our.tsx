@@ -1,4 +1,5 @@
-import Partners from "../components/our/partners";
+import PartenrsBringing from "../components/our/partenrsBringing";
+import PartnersReview from "../components/our/partnersReview";
 import Service from "../components/our/service";
 import Vision from "../components/our/vision";
 
@@ -7,7 +8,8 @@ export default function Our() {
         <div>
             <Vision />
             <Service />
-            <Partners />
+            <PartnersReview />
+            <PartenrsBringing />
         </div>
     );
 }

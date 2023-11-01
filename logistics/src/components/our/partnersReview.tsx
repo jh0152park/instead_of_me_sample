@@ -1,8 +1,8 @@
 import { Box, Center, Grid, Text, VStack } from "@chakra-ui/react";
 import YelloButton from "../common/yelloButton";
-import ReviewBox from "./partners/reviewBox";
+import ReviewBox from "./partnersReview/reviewBox";
 
-export default function Partners() {
+export default function PartnersReview() {
     return (
         <Box
             position={"relative"}
@@ -14,7 +14,7 @@ export default function Partners() {
             <Center w={"100%"} h={"100%"}>
                 <VStack spacing={5}>
                     <Text color={"#FC6307"} fontSize={"20px"}>
-                        Our Partnels
+                        Our Partners
                     </Text>
 
                     <Text
