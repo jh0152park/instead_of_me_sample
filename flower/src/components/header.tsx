@@ -7,7 +7,14 @@ export default function Header() {
     const location = useLocation();
 
     return (
-        <Center w="100%" position="fixed" top="50px" zIndex="99">
+        <Center
+            w="100%"
+            position="fixed"
+            pt="50px"
+            pb="20px"
+            zIndex="99"
+            bgColor={location.pathname === "/" ? "rgba(0,0,0,0)" : "white"}
+        >
             <Text
                 fontFamily={"Cormorant"}
                 fontSize={"50px"}
