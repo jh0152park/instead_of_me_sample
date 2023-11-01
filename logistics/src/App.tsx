@@ -3,6 +3,7 @@ import Layout from "./components/layout";
 import NotFound from "./components/notfound";
 import Home from "./screen/home";
 import Our from "./screen/our";
+import Company from "./screen/company";
 
 const router = createBrowserRouter([
     {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
             {
                 path: "our",
                 element: <Our />,
+            },
+            {
+                path: "company",
+                element: <Company />,
             },
         ],
     },
