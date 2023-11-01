@@ -79,18 +79,25 @@ export default function Home() {
                     )}
                 </AnimatePresence>
 
-                <Button
-                    onClick={updateImageIndex}
+                <Center
+                    w="180px"
+                    h="50px"
+                    border="1px solid white"
+                    borderRadius="30px"
                     position="absolute"
-                    top={"100px"}
-                    left={"100px"}
+                    top="70%"
+                    left="0"
+                    right="0"
+                    mx="auto"
+                    _hover={{
+                        cursor: "pointer",
+                        bgColor: "white",
+                        color: "rgba(0, 0, 0, 0.7)",
+                        transition: "all 0.2s linear",
+                    }}
                 >
-                    Change
-                </Button>
-
-                <Center w="100%" position="absolute" top="50px">
-                    <Text fontFamily={"Cormorant"} fontSize={"50px"}>
-                        My Flower
+                    <Text fontFamily={"Cormorant"} fontSize={"20px"}>
+                        Go to Shop
                     </Text>
                 </Center>
             </Box>
