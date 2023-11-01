@@ -40,13 +40,36 @@ export default function TechnicalValueContainer() {
                         고객에게 가치 있는 솔루션을 제공하는 데 핵심 역할을
                         합니다.
                     </Text>
-                    <Image
-                        src={imagePath}
+
+                    <Box
+                        display={"flex"}
+                        alignItems={"center"}
+                        justifyContent={"center"}
                         w={"100%"}
                         h={"100%"}
-                        my={"20px"}
-                        objectFit={"cover"}
-                    />
+                        my={"30px"}
+                        position={"relative"}
+                    >
+                        <Image
+                            src={imagePath}
+                            w={"100%"}
+                            h={"100%"}
+                            objectFit={"cover"}
+                            position={"absolute"}
+                        />
+                        <Text
+                            color={"white"}
+                            position={"relative"}
+                            fontSize={"48px"}
+                            lineHeight={"1.2"}
+                            fontWeight={"extrabold"}
+                        >
+                            INSTEADOFME
+                            <br />
+                            LOGISTICS
+                        </Text>
+                    </Box>
+
                     <Text flex={1}>
                         우리의 팀은 기술에 대한 열정과 전문 지식을 갖추고
                         있으며,
