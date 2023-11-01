@@ -4,6 +4,7 @@ import NotFound from "./components/notfound";
 import Layout from "./components/layout";
 import Home from "./screen/home";
 import Shop from "./screen/shop";
+import Order from "./screen/order";
 
 const router = createBrowserRouter([
     {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
             {
                 path: "shop",
                 element: <Shop />,
+            },
+            {
+                path: "order",
+                element: <Order />,
             },
         ],
     },
