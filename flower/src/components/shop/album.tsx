@@ -1,4 +1,5 @@
 import { Box, Center, Image, Text } from "@chakra-ui/react";
+import { useState } from "react";
 
 interface IProps {
     image: string;
@@ -6,6 +7,12 @@ interface IProps {
 }
 
 export default function Album({ image, name }: IProps) {
+    const [isHover, setIsHover] = useState<boolean>(false);
+
+    function toggleHover() {
+        setIsHover((prev) => !prev);
+    }
+
     return (
         <Box
             w="410px"
@@ -13,8 +20,20 @@ export default function Album({ image, name }: IProps) {
             position="relative"
             overflow="hidden"
             boxSizing="border-box"
+            onMouseLeave={toggleHover}
+            onMouseOver={toggleHover}
+            _hover={{
+                cursor: "pointer",
+            }}
         >
-            <Image w="100%" h="100%" objectFit="cover" src={image} />
+            <Image
+                w="100%"
+                h="100%"
+                objectFit="cover"
+                src={image}
+                transform={isHover ? "scale(1.1)" : "scale(1)"}
+                transition="all 0.2s linear"
+            />
 
             <Center
                 id="overlay"
@@ -24,6 +43,7 @@ export default function Album({ image, name }: IProps) {
                 position="absolute"
                 top="0"
                 left="0"
+                opacity={isHover ? 0 : 1}
             >
                 <Text fontSize="18px" fontFamily="Cormorant">
                     {name}
