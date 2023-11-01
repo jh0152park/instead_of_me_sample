@@ -1,5 +1,6 @@
 import { Box, Center, Image, Text } from "@chakra-ui/react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface IProps {
     image: string;
@@ -7,6 +8,7 @@ interface IProps {
 }
 
 export default function Album({ image, name }: IProps) {
+    const navigage = useNavigate();
     const [isHover, setIsHover] = useState<boolean>(false);
 
     function toggleHover() {
@@ -24,6 +26,9 @@ export default function Album({ image, name }: IProps) {
             onMouseOver={toggleHover}
             _hover={{
                 cursor: "pointer",
+            }}
+            onClick={() => {
+                navigage(`/${name.toLowerCase()}`);
             }}
         >
             <Image

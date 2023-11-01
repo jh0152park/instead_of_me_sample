@@ -1,6 +1,8 @@
 import { Box, Center, HStack, Heading } from "@chakra-ui/react";
 import Album from "../components/shop/album";
 import { Helmet } from "react-helmet";
+import Footer from "../components/footer";
+import { Link } from "react-router-dom";
 
 export default function Shop() {
     return (
@@ -25,6 +27,8 @@ export default function Shop() {
                     />
                 </HStack>
             </Center>
+
+            <Footer />
         </>
     );
 }
