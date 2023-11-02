@@ -17,6 +17,8 @@ export default function Logo() {
                 cursor: "pointer",
             }}
             onClick={onLogoClicked}
+            position="absolute"
+            left="90px"
         >
             <VStack>
                 <Text fontSize="20px" fontWeight="bold" color="teal">
