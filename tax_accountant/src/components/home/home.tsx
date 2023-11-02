@@ -5,6 +5,7 @@ import { Box, VStack } from "@chakra-ui/react";
 import NumberOne from "./numberOne";
 import NumberTwo from "./numberTwo";
 import NumberThree from "./numberThree";
+import Pay from "./pay";
 
 export default function Home() {
     return (
@@ -18,6 +19,7 @@ export default function Home() {
                 <NumberTwo />
                 <NumberThree />
             </VStack>
+            <Pay />
         </div>
     );
 }
