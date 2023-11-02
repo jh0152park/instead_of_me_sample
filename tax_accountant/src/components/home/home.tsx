@@ -6,6 +6,7 @@ import NumberOne from "./numberOne";
 import NumberTwo from "./numberTwo";
 import NumberThree from "./numberThree";
 import Pay from "./pay";
+import Consulting from "./consulting";
 
 export default function Home() {
     return (
@@ -20,6 +21,7 @@ export default function Home() {
                 <NumberThree />
             </VStack>
             <Pay />
+            <Consulting />
         </div>
     );
 }
