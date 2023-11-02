@@ -4,6 +4,7 @@ import BlueSection from "./blueSection";
 import { Box, VStack } from "@chakra-ui/react";
 import NumberOne from "./numberOne";
 import NumberTwo from "./numberTwo";
+import NumberThree from "./numberThree";
 
 export default function Home() {
     return (
@@ -15,6 +16,7 @@ export default function Home() {
             <VStack spacing={0}>
                 <NumberOne />
                 <NumberTwo />
+                <NumberThree />
             </VStack>
         </div>
     );
