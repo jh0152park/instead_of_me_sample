@@ -5,11 +5,10 @@ export default function Worry() {
     return (
         <Box
             position={"relative"}
-            top={"100px"}
-            py={"150px"}
             w={"100dvw"}
             h={"800px"}
             backgroundColor={"whitesmoke"}
+            py={"150px"}
         >
             <VStack>
                 <Text fontSize={"60px"} fontWeight={"bold"}>

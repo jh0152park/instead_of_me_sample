@@ -10,7 +10,7 @@ export default function Banner() {
                 w={"100%"}
                 h={"100%"}
                 position={"absolute"}
-                top={"100px"}
+                top={0}
                 left={0}
                 zIndex={-1}
             />
@@ -19,7 +19,7 @@ export default function Banner() {
                 w={"100%"}
                 h={"100%"}
                 display={"flex"}
-                pt={"250px"}
+                pt={"100px"}
                 spacing={"50px"}
             >
                 <Text
