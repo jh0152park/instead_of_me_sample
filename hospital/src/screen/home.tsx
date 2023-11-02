@@ -1,5 +1,12 @@
 import { Heading } from "@chakra-ui/react";
+import { Helmet } from "react-helmet";
 
 export default function Home() {
-    return <Heading>HOME</Heading>;
+    return (
+        <>
+            <Helmet>
+                <title>My Hospital</title>
+            </Helmet>
+        </>
+    );
 }
