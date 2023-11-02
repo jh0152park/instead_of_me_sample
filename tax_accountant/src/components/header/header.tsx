@@ -13,8 +13,8 @@ export default function Header() {
             alignItems={"center"}
             justifyContent={"space-between"}
             position={"fixed"}
-            backgroundColor={"white"}
-            backdropBlur={"12px"}
+            backgroundColor={"rgba(255,255,255,0.97)"}
+            zIndex={10}
         >
             <HStack spacing={"50px"}>
                 <Logo />
