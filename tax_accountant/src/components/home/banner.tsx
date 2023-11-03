@@ -26,6 +26,8 @@ export default function Banner() {
                     fontSize={"60px"}
                     fontWeight={"extrabold"}
                     textAlign={"center"}
+                    color={"white"}
+                    lineHeight={"1.2"}
                 >
                     세무 서비스, 10분만 비교해보세요
                     <br />

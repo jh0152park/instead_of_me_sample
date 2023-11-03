@@ -13,7 +13,6 @@ export default function PercentageLine({
     lineWidth: string;
     text: string;
 }) {
-    console.log(lineWidth);
     return (
         <HStack spacing={"30px"} w={"100%"} h={"50px"}>
             <Text
