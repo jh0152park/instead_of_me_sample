@@ -19,7 +19,7 @@ export default function Header() {
             <HStack spacing={"50px"}>
                 <Logo />
                 <TextItem text="세무서비스" path="/" />
-                <TextItem text="더낸세금" path="/overtax" />
+                <TextItem text="IOM피플" path="/people" />
             </HStack>
             <BlueButton text="상담 신청하기" />
         </Box>

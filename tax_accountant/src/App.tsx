@@ -3,6 +3,7 @@ import Layout from "./components/layout";
 import NotFound from "./components/notfound";
 import Home from "./components/home/home";
 import Consulting from "./components/consulting/consulting";
+import People from "./components/people/people";
 
 const router = createBrowserRouter([
     {
@@ -15,7 +16,8 @@ const router = createBrowserRouter([
                 element: <Home />,
             },
             {
-                path: "overtax",
+                path: "people",
+                element: <People />,
             },
             {
                 path: "consulting",
