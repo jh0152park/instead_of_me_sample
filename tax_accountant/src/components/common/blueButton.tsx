@@ -1,7 +1,13 @@
 import { Box, Text } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 
-export default function BlueButton({ text }: { text: string }) {
+export default function BlueButton({
+    text,
+    widthType = "initial",
+}: {
+    text: string;
+    widthType?: string;
+}) {
     const navigate = useNavigate();
 
     function onClickBox() {
@@ -19,8 +25,9 @@ export default function BlueButton({ text }: { text: string }) {
             borderRadius={"10px"}
             cursor={"pointer"}
             onClick={onClickBox}
+            w={widthType}
         >
-            <Text>{text}</Text>
+            <Text textAlign={"center"}>{text}</Text>
         </Box>
     );
 }
