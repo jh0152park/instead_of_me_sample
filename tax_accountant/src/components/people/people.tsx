@@ -2,6 +2,7 @@ import { Box } from "@chakra-ui/react";
 import Introduce from "./introduce";
 import Academy from "./academy";
 import Expert from "./expert";
+import Competitiveness from "./\bcompetitiveness";
 
 export default function People() {
     return (
@@ -10,6 +11,7 @@ export default function People() {
             <Introduce />
             <Academy />
             <Expert />
+            <Competitiveness />
         </div>
     );
 }
