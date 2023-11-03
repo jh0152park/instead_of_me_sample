@@ -1,4 +1,4 @@
-import { Box, Center, HStack, Image, Text, VStack } from "@chakra-ui/react";
+import { Center, HStack, Image, Text, VStack } from "@chakra-ui/react";
 
 export default function Introduce() {
     return (
@@ -10,6 +10,7 @@ export default function Introduce() {
             }
             justifyContent={"space-between"}
             px={"400px"}
+            position={"relative"}
         >
             <VStack alignItems={"flex-start"} spacing={"25px"}>
                 <Text fontSize={"24px"}>홍길동 대표 세무사</Text>
