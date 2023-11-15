@@ -2,7 +2,7 @@ import { Box } from "@chakra-ui/react";
 import Introduce from "./introduce";
 import Academy from "./academy";
 import Expert from "./expert";
-import Competitiveness from "./\bcompetitiveness";
+import Competitiveness from "./competitiveness";
 
 export default function People() {
     return (
