@@ -4,6 +4,7 @@ export default function MainBanner() {
     return (
         <Box w="100%" h="100vh">
             <Image
+                mt="200px"
                 w="100%"
                 h="100%"
                 objectFit="cover"
