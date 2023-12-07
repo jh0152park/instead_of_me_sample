@@ -17,7 +17,7 @@ export function HeaderTab() {
                 w="100%"
                 h="60px"
                 gap={0}
-                borderY="1px"
+                borderTop="1px"
                 borderStyle="solid"
                 borderColor="#c1c1c1"
             >

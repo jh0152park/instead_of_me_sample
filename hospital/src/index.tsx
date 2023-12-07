@@ -9,8 +9,8 @@ const GlobalStyle = createGlobalStyle`
     background-color: white;
     color: black;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    box-sizing: border-box;
-    overflow: hidden;
+    box-sizing: border-box; 
+    height: 200vh;
   }
   a {
     text-decoration: none;

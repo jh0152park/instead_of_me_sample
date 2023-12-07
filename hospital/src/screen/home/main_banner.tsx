@@ -2,9 +2,9 @@ import { Box, Image } from "@chakra-ui/react";
 
 export default function MainBanner() {
     return (
-        <Box w="100%" h="100vh">
+        <Box w="100%" h="800px">
             <Image
-                mt="200px"
+                mt="151px"
                 w="100%"
                 h="100%"
                 objectFit="cover"
