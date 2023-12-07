@@ -1,32 +1,27 @@
-import { Box, Flex, HStack, Text, VStack } from "@chakra-ui/react";
-import styled from "styled-components";
+import { Box, Flex } from "@chakra-ui/react";
 import { Category } from "./categoty";
 
-const category = [
-    "병원소개",
-    "프리미엄 교정",
-    "치아교정",
-    "커뮤니티",
-    "온라인상담",
-];
-
-export function HeaderTab() {
+export function HeaderTab({ height }: any) {
     return (
         <>
-            <HStack
-                w="100%"
-                h="60px"
-                gap={0}
-                borderTop="1px"
-                borderStyle="solid"
-                borderColor="#c1c1c1"
+            <nav
+                style={{
+                    borderTop: "1px solid #c1c1c1 ",
+                }}
             >
-                <HStack maxWidth="1240px" margin="auto" h="100%">
-                    {category.map((current) => (
-                        <Category title={current}></Category>
-                    ))}
-                </HStack>
-            </HStack>
+                <Flex
+                    maxWidth="1240px"
+                    justifyContent="space-between"
+                    margin="auto"
+                    textAlign="center"
+                >
+                    <Category title="병원소개" index={0}></Category>
+                    <Category title="프리미엄 교정" index={1}></Category>
+                    <Category title="치아교정" index={2}></Category>
+                    <Category title="커뮤니티" index={3}></Category>
+                    <Category title="온라인상담" index={4}></Category>
+                </Flex>
+            </nav>
         </>
     );
 }

@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     box-sizing: border-box; 
     height: 200vh;
+    line-height: 1.6;
   }
   a {
     text-decoration: none;
