@@ -6,7 +6,7 @@ export function Category({ title }: any) {
                 w="170px"
                 h="100%"
                 cursor="pointer"
-                _hover={{ backgroundColor: "#8C6AAE" }}
+                _hover={{ backgroundColor: "#8C6AAE", color: "white" }}
             >
                 <Text fontSize="20px" color="#404041">
                     {title}
