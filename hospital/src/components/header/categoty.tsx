@@ -1,11 +1,14 @@
 import {
     Box,
     Center,
+    Collapse,
     Flex,
     ListItem,
     Text,
     UnorderedList,
+    useDisclosure,
 } from "@chakra-ui/react";
+import { useMotionValueEvent, useScroll } from "framer-motion";
 import { useState } from "react";
 
 const detailList = [
@@ -43,9 +46,18 @@ const detailList = [
     [["온라인상담"], ["카톡상담"]],
 ];
 
-export function Category({ title, index }: any) {
-    const [ishover, setIshover] = useState(false);
-    console.log(ishover);
+export function Category({ title, index, ishover }: any) {
+    const [hoverTab, setHoverTab] = useState(false);
+    const [tabHeight, setTabHeight] = useState("60px");
+    const { scrollY } = useScroll();
+
+    useMotionValueEvent(scrollY, "change", (y) => {
+        if (y >= 200) {
+            setTabHeight("90px");
+        } else {
+            setTabHeight("60px");
+        }
+    });
     return (
         <>
             <Flex
@@ -54,48 +66,55 @@ export function Category({ title, index }: any) {
                 flexDir="column"
                 align="center"
                 justify="center"
-                onMouseEnter={() => setIshover(true)}
-                onMouseLeave={() => setIshover(false)}
+                onMouseEnter={() => setHoverTab(true)}
+                onMouseLeave={() => setHoverTab(false)}
             >
                 <Center
                     cursor="pointer"
-                    height="60px"
+                    height={tabHeight}
                     width="100%"
-                    backgroundColor={ishover ? "#8C6AAE" : "white"}
+                    backgroundColor={hoverTab ? "#8C6AAE" : "white"}
                     transition="0.3s"
                 >
                     <Text
                         fontSize="20px"
-                        color={ishover ? "white" : "#404041"}
+                        color={hoverTab ? "white" : "#404041"}
                         fontWeight="600"
                         verticalAlign="middle"
                     >
                         {title}
                     </Text>
                 </Center>
-                <UnorderedList
-                    display={ishover ? "list-item" : "none"}
-                    width="100%"
-                    height="220px"
-                    margin="10px 0 20px 0"
-                    borderRight="1px"
-                    borderStyle="solid"
-                    borderColor="#c1c1c1"
-                    listStyleType="none"
+                <Collapse
+                    in={ishover}
+                    transition={{
+                        exit: { delay: 0 },
+                        enter: { duration: 0.3 },
+                    }}
                 >
-                    {" "}
-                    {detailList[index].map((i, index) => (
-                        <ListItem
-                            listStyleType="none"
-                            padding="5px 0"
-                            margin="3px 0"
-                            color="#666"
-                            cursor="pointer"
-                        >
-                            {i}
-                        </ListItem>
-                    ))}
-                </UnorderedList>
+                    <UnorderedList
+                        width="100%"
+                        height="220px"
+                        margin="10px 0 20px 0"
+                        borderRight="1px"
+                        borderStyle="solid"
+                        borderColor="#c1c1c1"
+                        listStyleType="none"
+                    >
+                        {" "}
+                        {detailList[index].map((i, index) => (
+                            <ListItem
+                                listStyleType="none"
+                                padding="5px 0"
+                                margin="3px 0"
+                                color="#666"
+                                cursor="pointer"
+                            >
+                                {i}
+                            </ListItem>
+                        ))}
+                    </UnorderedList>
+                </Collapse>
             </Flex>
         </>
     );
