@@ -7,15 +7,12 @@ import { useState } from "react";
 export default function Header() {
     const { scrollY } = useScroll();
     const [hideHeader, setHideHeader] = useState(0);
-    const [tabHeight, setTabHeight] = useState("60px");
     useMotionValueEvent(scrollY, "change", (y) => {
         console.log(y);
         if (y >= 200) {
             setHideHeader(-100);
-            setTabHeight("90px");
         } else {
             setHideHeader(0);
-            setTabHeight("60px");
         }
     });
     return (
