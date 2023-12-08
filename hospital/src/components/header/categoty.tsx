@@ -95,7 +95,7 @@ export function Category({ title, index, ishover }: any) {
                     <UnorderedList
                         width="100%"
                         height="220px"
-                        margin="10px 0 20px 0"
+                        margin="10px 0 30px 0"
                         borderRight="1px"
                         borderStyle="solid"
                         borderColor="#c1c1c1"
@@ -106,7 +106,7 @@ export function Category({ title, index, ishover }: any) {
                             <ListItem
                                 listStyleType="none"
                                 padding="5px 0"
-                                margin="3px 0"
+                                margin="6px 0"
                                 color="#666"
                                 cursor="pointer"
                             >

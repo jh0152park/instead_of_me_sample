@@ -1,4 +1,4 @@
-import { Box, Center } from "@chakra-ui/react";
+import { Box, Center, Text } from "@chakra-ui/react";
 import Logo from "./header/logo";
 import { HeaderTab } from "./header/header_tab";
 import { useMotionValueEvent, useScroll } from "framer-motion";
@@ -8,7 +8,6 @@ export default function Header() {
     const { scrollY } = useScroll();
     const [hideHeader, setHideHeader] = useState(0);
     useMotionValueEvent(scrollY, "change", (y) => {
-        console.log(y);
         if (y >= 200) {
             setHideHeader(-100);
         } else {
@@ -26,10 +25,10 @@ export default function Header() {
                 borderStyle="solid"
                 borderColor="#c1c1c1"
             >
-                <Center mt={hideHeader} transition=" 0.3s">
-                    <Logo />
+                <Center h="90px" mt={hideHeader} transition=" 0.3s">
+                    <Logo text="대한민국치과"></Logo>
                 </Center>
-                <HeaderTab></HeaderTab>
+                <HeaderTab hideHeader={hideHeader}></HeaderTab>
             </Box>
         </>
     );
