@@ -14,7 +14,6 @@ import { useState } from "react";
 const detailList = [
     [
         ["8가지 약속"],
-        ["의료진소개"],
         ["진료시간 안내"],
         ["인테리어"],
         ["오시는길"],

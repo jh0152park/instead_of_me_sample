@@ -17,6 +17,7 @@ export default function Header() {
     return (
         <>
             <Box
+                zIndex="99"
                 w="100%"
                 position="fixed"
                 top="0"
