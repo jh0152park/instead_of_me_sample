@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import styled from "styled-components";
 
-const BannerBox = styled(motion.div)`
+const BannerBox = styled(motion.div)<{ index: any }>`
     position: absolute;
     top: 37%;
     margin-left: -600px;
@@ -32,16 +32,24 @@ const BannerVariants = {
         opacity: 1,
         transition: {
             type: "tween",
-            duration: 1.5,
-            delayChildren: 0.4,
-            staggerChildren: 0.3,
+            duration: 1,
+            delayChildren: 0.3,
+            staggerChildren: 0.2,
         },
     },
+    exit: { opacity: 0, x: -700 },
 };
-export function BannerText() {
+export function BannerText({ index }: any) {
+    console.log(index);
     return (
         <>
-            <BannerBox variants={BannerVariants} initial="start" animate="end">
+            <BannerBox
+                index={index}
+                variants={BannerVariants}
+                initial="start"
+                animate="end"
+                exit="exit"
+            >
                 <BannerH2 variants={BannerVariants}>
                     <p>Since 2013</p>
                     <span>10년 이상 한자리를 지켜온</span>

@@ -23,6 +23,7 @@ export default function Logo({ text, hideHeader }: ILogoText) {
             }}
             onClick={onLogoClicked}
             transition="0.3s"
+            width="100%"
             marginTop={!hideHeader ? "5px" : "20px"}
         >
             <Box mr="15px">
