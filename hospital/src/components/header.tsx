@@ -26,7 +26,13 @@ export default function Header() {
                 borderStyle="solid"
                 borderColor="#c1c1c1"
             >
-                <Center h="90px" mt={hideHeader} transition=" 0.3s">
+                <Center
+                    w="300px"
+                    m="auto"
+                    h="90px"
+                    mt={hideHeader}
+                    transition=" 0.3s"
+                >
                     <Logo text="대한민국치과"></Logo>
                 </Center>
                 <HeaderTab hideHeader={hideHeader}></HeaderTab>

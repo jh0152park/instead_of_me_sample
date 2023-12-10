@@ -44,6 +44,7 @@ const detailList = [
     [["온라인상담"], ["카톡상담"]],
 ];
 
+const MotionBox = motion(Box);
 export function Category({ title, index, ishover }: any) {
     const [hoverTab, setHoverTab] = useState(false);
     const [tabHeight, setTabHeight] = useState("60px");
@@ -84,7 +85,6 @@ export function Category({ title, index, ishover }: any) {
                     </Text>
                 </Center>
                 <Box
-                    as={motion.div}
                     width="100%"
                     height="220px"
                     margin="10px 0 30px 0"
@@ -93,11 +93,11 @@ export function Category({ title, index, ishover }: any) {
                     borderColor="#c1c1c1"
                     listStyleType="none"
                     display={ishover ? "block" : "none"}
-                    transition="0.5"
+                    transition="0.3s"
                 >
-                    {" "}
                     {detailList[index].map((i, index) => (
                         <Text
+                            key={index}
                             listStyleType="none"
                             padding="5px 0"
                             margin="6px 0"

@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import styled from "styled-components";
 
-const BannerBox = styled(motion.div)<{ index: any }>`
+const BannerBox = styled(motion.div)`
     position: absolute;
     top: 37%;
     margin-left: -600px;
@@ -40,23 +40,21 @@ const BannerVariants = {
     exit: { opacity: 0, x: -700 },
 };
 export function BannerText({ index }: any) {
-    console.log(index);
     return (
         <>
             <BannerBox
-                index={index}
                 variants={BannerVariants}
                 initial="start"
                 animate="end"
                 exit="exit"
             >
                 <BannerH2 variants={BannerVariants}>
-                    <p>Since 2013</p>
-                    <span>10년 이상 한자리를 지켜온</span>
+                    <p>Since 2008</p>
+                    <span>15년 이상 치아를 지켜온</span>
                 </BannerH2>
                 <BannerH1 variants={BannerVariants}>대한민국치과</BannerH1>
                 <BannerH3 variants={BannerVariants}>
-                    - 서울대 출신 의학박사 교정전문의
+                    - 연세대 출신 의학박사 교정전문의
                 </BannerH3>
                 <BannerH3 variants={BannerVariants}>
                     - 1인 대표원장 1:1 책임진료
