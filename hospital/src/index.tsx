@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
   ${reset}
   body {
     background-color: white;
-    color: black;
+    color: #444;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     box-sizing: border-box; 
     height: 200vh;

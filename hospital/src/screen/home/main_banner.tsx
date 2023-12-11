@@ -119,14 +119,18 @@ export default function MainBanner() {
                                     backgroundSize="cover"
                                     backgroundImage={require(`../../resource/images/${current}`)}
                                 >
-                                    {" "}
                                     {index === 0 ? (
                                         <BannerText index={index}></BannerText>
                                     ) : null}
                                 </Box>
                             </>
                         ))}
-                        <Center position="absolute" bottom="20px" left="50%">
+                        <Center
+                            position="absolute"
+                            bottom="20px"
+                            left="50%"
+                            ml="-100px"
+                        >
                             <>
                                 {[0, 1, 2].map((i) => (
                                     <PageDots
