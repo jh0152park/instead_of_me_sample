@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet";
 import MainBannerTest from "./home/main_banner_test";
 import MainBanner from "./home/main_banner";
 import { FirstOverView } from "./home/first_overview";
+import { SecondOverview } from "./home/second_overview";
 
 export default function Home() {
     return (
@@ -11,6 +12,7 @@ export default function Home() {
             </Helmet>
             <MainBanner />
             <FirstOverView />
+            <SecondOverview />
         </>
     );
 }

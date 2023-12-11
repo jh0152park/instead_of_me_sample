@@ -7,20 +7,19 @@ const Wrapper = styled.div`
     cursor: pointer;
     &:hover {
         div {
-            border: 5px solid #603988;
+            border: 5px solid #8b6bae;
             p {
                 font-size: 68px;
                 transition: 0.2s linear;
             }
             img {
                 filter: grayscale(0%);
-                scale: 1.4;
+                scale: 1.3;
                 transition: 0.3s linear;
             }
-            transition: 0.2s linear;
         }
 
-        color: #603988;
+        color: #8b6bae;
     }
 `;
 

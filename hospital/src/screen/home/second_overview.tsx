@@ -1,11 +1,23 @@
-import { Box, Center, Heading, Slide, Text } from "@chakra-ui/react";
+import { Box, Slide, Center, Text, Heading } from "@chakra-ui/react";
 import { FirstOverviewCategory } from "../../components/overview/first_overview_category";
+import { useMotionValueEvent, useScroll } from "framer-motion";
+import { useState } from "react";
+import { SecondOverviewCategory } from "../../components/overview/second_overview_category";
 
-export function FirstOverView() {
+export function SecondOverview() {
+    const { scrollY } = useScroll();
+    const [showOverview, SetShowOverview] = useState(false);
+    useMotionValueEvent(scrollY, "change", (y) => {
+        if (y >= 800) {
+            SetShowOverview(true);
+        } else if (y <= 600) {
+            SetShowOverview(false);
+        }
+    });
     return (
         <>
             <Slide
-                in={true}
+                in={showOverview}
                 direction="bottom"
                 transition={{ enter: { duration: 0.7 } }}
                 style={{ position: "relative" }}
@@ -13,10 +25,11 @@ export function FirstOverView() {
                 <Box
                     position="relative"
                     top="152px"
-                    mt="100px"
                     w="100%"
-                    h="800px"
+                    h="1000px"
+                    py="100px"
                     textAlign="center"
+                    backgroundColor="#454047"
                 >
                     <Box
                         w="1200px"
@@ -35,54 +48,55 @@ export function FirstOverView() {
                         <Center
                             position="relative"
                             left="30%"
-                            w="500px"
-                            backgroundColor="white"
-                            px="20px"
+                            w="450px"
+                            backgroundColor="#474249"
                             fontSize="40px"
                             fontWeight="100"
-                            color="#603988"
+                            color="white"
                         >
                             <Text
                                 verticalAlign="middle"
                                 lineHeight="1em"
-                                px="15px"
-                                fontSize="78px"
+                                p="5px 15px 5px 15px"
+                                mr="10px"
+                                fontSize="74px"
                                 color="white"
-                                backgroundColor="#603988"
-                                fontWeight="600"
+                                backgroundColor="#1c1c1c"
+                                fontWeight="400"
+                                position="relative"
                             >
-                                1
-                                <em
-                                    style={{
-                                        fontSize: "41px",
-                                        fontWeight: "400",
-                                    }}
-                                >
-                                    %
-                                </em>
+                                P
                             </Text>
-                            <Text mx="10px">의</Text>
-                            <Text fontWeight="600" mr="10px">
-                                프리미엄
+                            <Text>REMIUM 치아교정</Text>
+                            <Text
+                                position="absolute"
+                                left="85px"
+                                top="-42px"
+                                fontSize="48px"
+                            >
+                                +
                             </Text>
-                            의료진
                         </Center>
                         <Text
+                            textAlign="center"
                             color="#bfbfbf"
                             fontWeight="100"
                             letterSpacing="12px"
-                            margin="15px 0 60px 50px"
+                            margin="10px auto"
                         >
-                            KOREA ORTHODONTIC CLINIC
+                            PREMIUM ORTHODONTIC CLINIC
                         </Text>
                     </Box>
                     <Heading
-                        color="#444"
-                        fontWeight="700"
-                        fontSize="22px"
-                        mb="20px"
+                        color="white"
+                        fontWeight="400"
+                        fontSize="18px"
+                        mt="80px"
                     >
-                        치과 진료만 2003년부터...
+                        지금까지의 치아교정과는 차원이 다른 한 단계 업그레이드
+                        된 치아교정,<br></br>
+                        프리미엄 치아교정은 치아의 가지런함을 너머 얼굴전체의
+                        아름다움을 실현합니다.
                     </Heading>
                     <Text fontSize="18px" color="#444" display="block">
                         연세대 치대 출신 의학박사 치과전문의가 경험을 바탕으로
@@ -90,7 +104,7 @@ export function FirstOverView() {
                         환자분들이 만족하실 수 있는 최상의 치료결과를
                         약속드립니다.
                     </Text>
-                    <FirstOverviewCategory></FirstOverviewCategory>
+                    <SecondOverviewCategory />
                 </Box>
             </Slide>
         </>

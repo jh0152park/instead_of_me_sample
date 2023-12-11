@@ -11,12 +11,15 @@ const GlobalStyle = createGlobalStyle`
     color: #444;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     box-sizing: border-box; 
-    height: 200vh;
+    height: 300vh;
     line-height: 1.6;
     overflow-x: hidden;
   }
   a {
     text-decoration: none;
+  }
+  * {
+    box-sizing: border-box;
   }
 `;
 

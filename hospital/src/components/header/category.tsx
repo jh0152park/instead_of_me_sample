@@ -44,7 +44,6 @@ const detailList = [
     [["온라인상담"], ["카톡상담"]],
 ];
 
-const MotionBox = motion(Box);
 export function Category({ title, index, ishover }: any) {
     const [hoverTab, setHoverTab] = useState(false);
     const [tabHeight, setTabHeight] = useState("60px");

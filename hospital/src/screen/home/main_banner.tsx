@@ -2,13 +2,7 @@ import { Box, Center } from "@chakra-ui/react";
 import { BannerText } from "../../components/banner/banner_text";
 import { useState } from "react";
 import styled from "styled-components";
-import {
-    motion,
-    AnimatePresence,
-    useMotionValue,
-    useMotionValueEvent,
-    useScroll,
-} from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const BannerImg = ["dentist5.jpg", "dentist2.jpg", "clinic.jpg"];
 

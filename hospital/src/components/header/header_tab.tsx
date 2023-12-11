@@ -1,5 +1,5 @@
 import { Box, Flex } from "@chakra-ui/react";
-import { Category } from "./categoty";
+import { Category } from "./category";
 import { useState } from "react";
 import Logo from "./logo";
 
