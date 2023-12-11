@@ -2,7 +2,12 @@ import { Box, Center, Image, Text, VStack } from "@chakra-ui/react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { go_to_top } from "../../utils/util";
 
-export default function Logo() {
+interface ILogoText {
+    text?: string;
+    hideHeader?: number;
+}
+
+export default function Logo({ text, hideHeader }: ILogoText) {
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -17,17 +22,19 @@ export default function Logo() {
                 cursor: "pointer",
             }}
             onClick={onLogoClicked}
-            h="90px"
+            transition="0.3s"
+            width="100%"
+            marginTop={!hideHeader ? "5px" : "20px"}
         >
-            <Box>
+            <Box mr="15px">
                 <Image
-                    w="60px"
-                    h="60px"
+                    w="50px"
+                    h="50px"
                     src={require("../../resource/images/태극기.png")}
                 ></Image>
             </Box>
             <Text fontSize="24px" fontWeight="bold" color="rgba(0,0,0,0.7)">
-                대한민국치과
+                {text}
             </Text>
         </Center>
     );

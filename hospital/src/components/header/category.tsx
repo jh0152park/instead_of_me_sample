@@ -6,15 +6,13 @@ import {
     ListItem,
     Text,
     UnorderedList,
-    useDisclosure,
 } from "@chakra-ui/react";
-import { useMotionValueEvent, useScroll } from "framer-motion";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useState } from "react";
 
 const detailList = [
     [
         ["8가지 약속"],
-        ["의료진소개"],
         ["진료시간 안내"],
         ["인테리어"],
         ["오시는길"],
@@ -85,35 +83,26 @@ export function Category({ title, index, ishover }: any) {
                         {title}
                     </Text>
                 </Center>
-                <Collapse
-                    in={ishover}
-                    transition={{
-                        exit: { delay: 0 },
-                        enter: { duration: 0.3 },
-                    }}
-                >
-                    <UnorderedList
-                        width="100%"
-                        height="220px"
-                        margin="10px 0 20px 0"
+                <Collapse in={ishover} style={{ width: "100%" }}>
+                    <Box
+                        margin="10px 0 30px 0"
                         borderRight="1px"
                         borderStyle="solid"
                         borderColor="#c1c1c1"
-                        listStyleType="none"
                     >
-                        {" "}
                         {detailList[index].map((i, index) => (
-                            <ListItem
+                            <Text
+                                key={index}
                                 listStyleType="none"
                                 padding="5px 0"
-                                margin="3px 0"
+                                margin="6px 0"
                                 color="#666"
                                 cursor="pointer"
                             >
                                 {i}
-                            </ListItem>
+                            </Text>
                         ))}
-                    </UnorderedList>
+                    </Box>
                 </Collapse>
             </Flex>
         </>

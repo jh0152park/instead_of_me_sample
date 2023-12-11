@@ -1,8 +1,12 @@
 import { Box, Flex } from "@chakra-ui/react";
-import { Category } from "./categoty";
+import { Category } from "./category";
 import { useState } from "react";
+import Logo from "./logo";
 
-export function HeaderTab({ height }: any) {
+interface IHideHeader {
+    hideHeader?: number;
+}
+export function HeaderTab({ hideHeader }: IHideHeader) {
     const [ishover, setIshover] = useState(false);
     return (
         <>
@@ -15,10 +19,11 @@ export function HeaderTab({ height }: any) {
                     maxWidth="1240px"
                     justifyContent="space-between"
                     margin="auto"
-                    textAlign="center"
+                    align="flex-start"
                     onMouseEnter={() => setIshover(true)}
                     onMouseLeave={() => setIshover(false)}
                 >
+                    <Logo hideHeader={hideHeader}></Logo>
                     <Category
                         title="병원소개"
                         index={0}
