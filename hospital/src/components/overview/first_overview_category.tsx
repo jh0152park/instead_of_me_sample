@@ -66,14 +66,25 @@ export function FirstOverviewCategory() {
                 <Wrapper>
                     <Center w="210px" h="210px" border="1px solid #c1c1c1">
                         <Image
-                            w="100%"
-                            h="100%"
+                            w="100px"
                             filter="grayscale(100%)"
                             src={require(`../../resource/images/보건복지부_로고.png`)}
                         />
                     </Center>
                     <Text fontSize="20px" mt="15px" fontWeight="600">
                         치과 전문의
+                    </Text>
+                </Wrapper>
+                <Wrapper>
+                    <Center w="210px" h="210px" border="1px solid #c1c1c1">
+                        <Image
+                            w="100px"
+                            filter="grayscale(100%)"
+                            src={require(`../../resource/images/oral_surgery.png`)}
+                        />
+                    </Center>
+                    <Text fontSize="20px" mt="15px" fontWeight="600">
+                        구강악안면학 부전공
                     </Text>
                 </Wrapper>
             </Center>

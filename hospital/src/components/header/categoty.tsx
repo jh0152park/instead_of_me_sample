@@ -84,30 +84,27 @@ export function Category({ title, index, ishover }: any) {
                         {title}
                     </Text>
                 </Center>
-                <Box
-                    width="100%"
-                    height="220px"
-                    margin="10px 0 30px 0"
-                    borderRight="1px"
-                    borderStyle="solid"
-                    borderColor="#c1c1c1"
-                    listStyleType="none"
-                    display={ishover ? "block" : "none"}
-                    transition="0.3s"
-                >
-                    {detailList[index].map((i, index) => (
-                        <Text
-                            key={index}
-                            listStyleType="none"
-                            padding="5px 0"
-                            margin="6px 0"
-                            color="#666"
-                            cursor="pointer"
-                        >
-                            {i}
-                        </Text>
-                    ))}
-                </Box>
+                <Collapse in={ishover} style={{ width: "100%" }}>
+                    <Box
+                        margin="10px 0 30px 0"
+                        borderRight="1px"
+                        borderStyle="solid"
+                        borderColor="#c1c1c1"
+                    >
+                        {detailList[index].map((i, index) => (
+                            <Text
+                                key={index}
+                                listStyleType="none"
+                                padding="5px 0"
+                                margin="6px 0"
+                                color="#666"
+                                cursor="pointer"
+                            >
+                                {i}
+                            </Text>
+                        ))}
+                    </Box>
+                </Collapse>
             </Flex>
         </>
     );
