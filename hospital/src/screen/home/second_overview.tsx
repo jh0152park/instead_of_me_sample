@@ -1,5 +1,4 @@
 import { Box, Slide, Center, Text, Heading } from "@chakra-ui/react";
-import { FirstOverviewCategory } from "../../components/overview/first_overview_category";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { useState } from "react";
 import { SecondOverviewCategory } from "../../components/overview/second_overview_category";
@@ -92,6 +91,7 @@ export function SecondOverview() {
                         fontWeight="400"
                         fontSize="18px"
                         mt="80px"
+                        lineHeight="1.6"
                     >
                         지금까지의 치아교정과는 차원이 다른 한 단계 업그레이드
                         된 치아교정,<br></br>
