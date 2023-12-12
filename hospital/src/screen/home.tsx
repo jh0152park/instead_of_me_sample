@@ -1,9 +1,10 @@
 import { Helmet } from "react-helmet";
 import MainBannerTest from "./home/main_banner_test";
 import MainBanner from "./home/main_banner";
-import { FirstOverView } from "./home/first_overview";
-import { SecondOverview } from "./home/second_overview";
-import { ThirdOverView } from "./home/third_overview";
+import { FirstOverView } from "./home/overview/first_overview";
+import { SecondOverview } from "./home/overview/second_overview";
+import { ThirdOverView } from "./home/overview/third_overview";
+import { FourthOverView } from "./home/overview/fourth_overview";
 
 export default function Home() {
     return (
@@ -15,6 +16,7 @@ export default function Home() {
             <FirstOverView />
             <SecondOverview />
             <ThirdOverView />
+            <FourthOverView />
         </>
     );
 }

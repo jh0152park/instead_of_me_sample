@@ -94,8 +94,6 @@ export default function MainBanner() {
                 >
                     <Box
                         as={motion.div}
-                        // drag="x"
-                        // style={{ x: xValue }}
                         w="100%"
                         position="absolute"
                         variants={BannerVariants}

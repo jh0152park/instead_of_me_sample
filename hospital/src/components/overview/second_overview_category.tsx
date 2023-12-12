@@ -1,8 +1,7 @@
-import { Box, Center, Image, Text } from "@chakra-ui/react";
-import { motion } from "framer-motion";
+import { Center, Text } from "@chakra-ui/react";
 import styled from "styled-components";
 
-const Container = styled(motion.div)`
+const Container = styled.div`
     width: 375px;
     height: 490px;
     position: relative;
@@ -10,7 +9,16 @@ const Container = styled(motion.div)`
     cursor: pointer;
     overflow: hidden;
 `;
-const InnerBox = styled(motion.div)`
+const InnerImg = styled.img`
+    width: 100%;
+    height: 100%;
+    alt: "overview";
+    transition: scale 0.5s;
+    ${Container}:hover & {
+        scale: 1.1;
+    }
+`;
+const InnerBox = styled.div`
     position: absolute;
     top: 35%;
     left: 20px;
@@ -25,29 +33,13 @@ const InnerText = styled.p`
     font-size: 32px;
     font-weight: 100;
 `;
-const hoverVariant = {
-    initial: { scale: 1 },
-    hover: {
-        scale: 1.1,
-        transition: {
-            duration: 0.5,
-        },
-    },
-    exit: { scale: 1 },
-};
 
 export function SecondOverviewCategory() {
     return (
         <>
             <Center mt="20px" gap="40px">
                 <Container>
-                    <Image
-                        as={motion.img}
-                        variants={hoverVariant}
-                        whileHover="hover"
-                        initial="initial"
-                        w="100%"
-                        h="100%"
+                    <InnerImg
                         src={require(`../../resource/images/work/overview-1.jpg`)}
                     />
                     <InnerBox>
@@ -63,13 +55,7 @@ export function SecondOverviewCategory() {
                     </InnerBox>
                 </Container>
                 <Container>
-                    <Image
-                        as={motion.img}
-                        variants={hoverVariant}
-                        whileHover="hover"
-                        initial="initial"
-                        w="100%"
-                        h="100%"
+                    <InnerImg
                         src={require(`../../resource/images/work/overview-2.jpg`)}
                     />
                     <InnerBox style={{ top: "58%", color: "white" }}>
@@ -84,13 +70,7 @@ export function SecondOverviewCategory() {
                     </InnerBox>
                 </Container>
                 <Container>
-                    <Image
-                        as={motion.img}
-                        variants={hoverVariant}
-                        whileHover="hover"
-                        initial="initial"
-                        w="100%"
-                        h="100%"
+                    <InnerImg
                         src={require(`../../resource/images/work/overview-3.jpg`)}
                     />
                     <InnerBox>
@@ -105,13 +85,7 @@ export function SecondOverviewCategory() {
                     </InnerBox>
                 </Container>
                 <Container>
-                    <Image
-                        as={motion.img}
-                        variants={hoverVariant}
-                        whileHover="hover"
-                        initial="initial"
-                        w="100%"
-                        h="100%"
+                    <InnerImg
                         src={require(`../../resource/images/work/overview-4.jpg`)}
                     />
                     <InnerBox style={{ top: "58%" }}>

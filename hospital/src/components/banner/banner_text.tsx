@@ -42,24 +42,26 @@ const BannerVariants = {
 export function BannerText({ index }: any) {
     return (
         <>
-            <BannerBox
-                variants={BannerVariants}
-                initial="start"
-                animate="end"
-                exit="exit"
-            >
-                <BannerH2 variants={BannerVariants}>
-                    <p>Since 2008</p>
-                    <span>15년 이상 치아를 지켜온</span>
-                </BannerH2>
-                <BannerH1 variants={BannerVariants}>대한민국치과</BannerH1>
-                <BannerH3 variants={BannerVariants}>
-                    - 연세대 출신 의학박사 교정전문의
-                </BannerH3>
-                <BannerH3 variants={BannerVariants}>
-                    - 1인 대표원장 1:1 책임진료
-                </BannerH3>
-            </BannerBox>
+            <AnimatePresence initial={true} key={index}>
+                <BannerBox
+                    variants={BannerVariants}
+                    initial="start"
+                    animate="end"
+                    exit="exit"
+                >
+                    <BannerH2 variants={BannerVariants}>
+                        <p>Since 2008</p>
+                        <span>15년 이상 치아를 지켜온</span>
+                    </BannerH2>
+                    <BannerH1 variants={BannerVariants}>대한민국치과</BannerH1>
+                    <BannerH3 variants={BannerVariants}>
+                        - 연세대 출신 의학박사 교정전문의
+                    </BannerH3>
+                    <BannerH3 variants={BannerVariants}>
+                        - 1인 대표원장 1:1 책임진료
+                    </BannerH3>
+                </BannerBox>
+            </AnimatePresence>
         </>
     );
 }
