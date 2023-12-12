@@ -1,6 +1,7 @@
 import { Heading } from "@chakra-ui/react";
 import { Helmet } from "react-helmet";
 import Banner from "../components/home/banner";
+import Products from "../components/home/products";
 
 export default function Home() {
     return (
@@ -10,6 +11,7 @@ export default function Home() {
             </Helmet>
 
             <Banner />
+            <Products />
         </>
     );
 }
