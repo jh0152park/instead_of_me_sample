@@ -9,10 +9,9 @@ export default function Header() {
             w="100%"
             h="70px"
             pt="10px"
-            px="40px"
             position="fixed"
             top={0}
-            justifyContent="space-between"
+            justifyContent="center"
             zIndex={99}
         >
             <Logo />
