@@ -13,6 +13,7 @@ export default function Header() {
             position="fixed"
             top={0}
             justifyContent="space-between"
+            zIndex={99}
         >
             <Logo />
             <Menus />
