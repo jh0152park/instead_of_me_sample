@@ -17,6 +17,8 @@ export default function Logo() {
                 if (location.pathname === "/") go_to_top(0);
                 else navigate("/");
             }}
+            position="absolute"
+            left="40px"
         >
             <VStack h="100%" spacing={0}>
                 <Heading h="70%" fontSize="25px">
