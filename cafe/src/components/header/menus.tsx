@@ -37,6 +37,18 @@ export default function Menus() {
                     transition: "all 0.2s linear",
                 }}
                 onClick={() => {
+                    navigate("/shop");
+                }}
+            >
+                <Text fontWeight="bold">SHOP</Text>
+            </Center>
+            <Center
+                _hover={{
+                    cursor: "pointer",
+                    color: "rgba(255, 255, 255, 0.4)",
+                    transition: "all 0.2s linear",
+                }}
+                onClick={() => {
                     navigate("/contact");
                 }}
             >

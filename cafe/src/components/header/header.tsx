@@ -7,8 +7,8 @@ export default function Header() {
     return (
         <HStack
             w="100%"
-            h="100px"
-            pt="30px"
+            h="70px"
+            pt="10px"
             px="40px"
             position="fixed"
             top={0}
