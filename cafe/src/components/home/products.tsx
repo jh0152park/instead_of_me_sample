@@ -59,8 +59,9 @@ export default function Products() {
                 </Box>
 
                 <Grid templateColumns="repeat(4, 1fr)" gap="50px">
-                    {products.map((product) => (
+                    {products.map((product, index) => (
                         <Product
+                            key={index}
                             productName={product.name}
                             productCost={product.cost}
                             productImage={product.image}
