@@ -5,7 +5,7 @@ export default function Banner() {
 
     return (
         <Box w="100%" h="100vh">
-            <Image src={backgroundImage} objectFit="cover" />
+            <Image w="100%" h="100%" src={backgroundImage} objectFit="cover" />
         </Box>
     );
 }
