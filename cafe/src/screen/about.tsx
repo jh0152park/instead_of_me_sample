@@ -4,8 +4,7 @@ import { Helmet } from "react-helmet";
 import { go_to_top } from "../utils/util";
 
 export default function About() {
-    const image =
-        "https://github.com/jh0152park/instead_of_me_sample/blob/main/cafe/images/image7.jpg?raw=true";
+    const image = require("../../src/resources/images/about_main_image.jpg");
 
     useEffect(() => {
         go_to_top(0);

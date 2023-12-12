@@ -6,8 +6,8 @@ import More from "./buttons/more";
 export default function Buttons() {
     return (
         <HStack spacing={"20px"}>
-            <SearchButton />
-            <Cart />
+            {/* <SearchButton />
+            <Cart /> */}
             <More />
         </HStack>
     );
