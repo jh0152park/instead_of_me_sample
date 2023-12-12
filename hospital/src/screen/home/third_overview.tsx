@@ -1,11 +1,22 @@
 import { Box, Center, Heading, Slide, Text } from "@chakra-ui/react";
-import { FirstOverviewCategory } from "../../components/overview/first_overview_category";
+import { useMotionValueEvent, useScroll } from "framer-motion";
+import { useState } from "react";
+import { ThirdOverviewCategory } from "../../components/overview/thrid_overview_category";
 
 export function ThirdOverView() {
+    const { scrollY } = useScroll();
+    const [showOverview, SetShowOverview] = useState(false);
+    useMotionValueEvent(scrollY, "change", (y) => {
+        if (y >= 1800) {
+            SetShowOverview(true);
+        } else if (y <= 1600) {
+            SetShowOverview(false);
+        }
+    });
     return (
         <>
             <Slide
-                in={true}
+                in={showOverview}
                 direction="bottom"
                 transition={{ enter: { duration: 0.7 } }}
                 style={{ position: "relative" }}
@@ -13,9 +24,10 @@ export function ThirdOverView() {
                 <Box
                     position="relative"
                     top="152px"
-                    mt="100px"
+                    mt="50px"
                     w="100%"
-                    h="800px"
+                    h="900px"
+                    py="100px"
                     textAlign="center"
                 >
                     <Box
@@ -34,8 +46,8 @@ export function ThirdOverView() {
                         ></Box>
                         <Center
                             position="relative"
-                            left="30%"
-                            w="500px"
+                            margin="0 auto"
+                            w="380px"
                             backgroundColor="white"
                             px="20px"
                             fontSize="40px"
@@ -45,27 +57,18 @@ export function ThirdOverView() {
                             <Text
                                 verticalAlign="middle"
                                 lineHeight="1em"
-                                px="15px"
+                                px="10px"
                                 fontSize="78px"
                                 color="white"
                                 backgroundColor="#603988"
-                                fontWeight="600"
+                                fontWeight="300"
                             >
-                                1
-                                <em
-                                    style={{
-                                        fontSize: "41px",
-                                        fontWeight: "400",
-                                    }}
-                                >
-                                    %
-                                </em>
+                                W
                             </Text>
-                            <Text mx="10px">의</Text>
+                            <Text mx="10px">ITH</Text>
                             <Text fontWeight="600" mr="10px">
-                                프리미엄
+                                커뮤니티
                             </Text>
-                            의료진
                         </Center>
                         <Text
                             color="#bfbfbf"
@@ -73,24 +76,22 @@ export function ThirdOverView() {
                             letterSpacing="12px"
                             margin="15px 0 60px 50px"
                         >
-                            KOREA ORTHODONTIC CLINIC
+                            WITH COMMUNITY
                         </Text>
                     </Box>
                     <Heading
                         color="#444"
-                        fontWeight="700"
+                        fontWeight="600"
                         fontSize="22px"
-                        mb="20px"
+                        mb="30px"
                     >
-                        치과 진료만 2003년부터...
+                        환자, 의료진, 가족이 함께 하는 공간입니다.
                     </Heading>
-                    <Text fontSize="18px" color="#444" display="block">
-                        연세대 치대 출신 의학박사 치과전문의가 경험을 바탕으로
-                        <br></br>
-                        환자분들이 만족하실 수 있는 최상의 치료결과를
-                        약속드립니다.
+                    <Text fontSize="18px" color="#444" mb="60px">
+                        환자분들이 남겨주신 소중한 후기, 치료사례, 의료진의 컬럼
+                        등을 확인해보세요.
                     </Text>
-                    <FirstOverviewCategory></FirstOverviewCategory>
+                    <ThirdOverviewCategory />
                 </Box>
             </Slide>
         </>

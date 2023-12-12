@@ -10,14 +10,7 @@ export function FirstOverView() {
                 transition={{ enter: { duration: 0.7 } }}
                 style={{ position: "relative" }}
             >
-                <Box
-                    position="relative"
-                    top="152px"
-                    mt="100px"
-                    w="100%"
-                    h="800px"
-                    textAlign="center"
-                >
+                <Box mt="300px" w="100%" h="800px" textAlign="center">
                     <Box
                         w="1200px"
                         margin="0 auto"
@@ -34,7 +27,7 @@ export function FirstOverView() {
                         ></Box>
                         <Center
                             position="relative"
-                            left="30%"
+                            margin="0 auto"
                             w="500px"
                             backgroundColor="white"
                             px="20px"

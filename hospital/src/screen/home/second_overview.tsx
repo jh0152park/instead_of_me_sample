@@ -23,7 +23,7 @@ export function SecondOverview() {
             >
                 <Box
                     position="relative"
-                    top="152px"
+                    top="100px"
                     w="100%"
                     h="1000px"
                     py="100px"
@@ -46,7 +46,7 @@ export function SecondOverview() {
                         ></Box>
                         <Center
                             position="relative"
-                            left="30%"
+                            margin="0 auto"
                             w="450px"
                             backgroundColor="#474249"
                             fontSize="40px"

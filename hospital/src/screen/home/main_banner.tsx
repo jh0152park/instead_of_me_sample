@@ -21,13 +21,16 @@ const Btn = styled.svg`
 `;
 const BannerVariants = {
     hidden: (dir: number) => ({
-        x: window.innerWidth * dir,
+        x: 1000 * dir,
+        opacity: 0,
     }),
     visible: {
         x: 0,
+        opacity: 1,
     },
     exit: (dir: number) => ({
-        x: -window.innerWidth * dir,
+        x: -1000 * dir,
+        opacity: 0,
     }),
 };
 export const PageDots = styled.button<{ index: number }>`
