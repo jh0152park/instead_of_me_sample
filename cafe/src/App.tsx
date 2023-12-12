@@ -5,6 +5,7 @@ import NotFound from "./components/notfound";
 import About from "./screen/about";
 import Cafes from "./screen/cafes";
 import Contact from "./screen/contact";
+import Shop from "./screen/shop";
 
 const router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
             {
                 path: "contact",
                 element: <Contact />,
+            },
+            {
+                path: "shop",
+                element: <Shop />,
             },
         ],
     },
