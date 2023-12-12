@@ -22,7 +22,7 @@ export default function Contact() {
 
             <Center w="100%" my="100px">
                 <VStack>
-                    <Text>Instagram. @nameofinstagram</Text>
+                    <Text>Instagram. @instead_of_me_coffee</Text>
                     <Text>Email. nameofemail@address.com</Text>
                     <Text>Tel. 012-345-678</Text>
                 </VStack>
