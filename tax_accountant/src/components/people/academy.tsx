@@ -12,7 +12,12 @@ export default function Academy() {
                     borderRadius={"50%"}
                 />
 
-                <VStack w={"600px"} alignItems={"flex-start"} spacing={"20px"}>
+                <VStack
+                    w={"600px"}
+                    alignItems={"flex-start"}
+                    spacing={"20px"}
+                    lineHeight={"1.4"}
+                >
                     <Text color={"#1265F5"} fontSize={"20px"}>
                         IOM 아카데미 / 김철수 팀장
                     </Text>

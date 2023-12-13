@@ -8,12 +8,17 @@ import {
     VStack,
 } from "@chakra-ui/react";
 import RadioButton from "./radioButton";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CheckBoxLabel from "./checkBoxLabel";
 import BlueButton from "../common/blueButton";
+import { go_to_scroll_position } from "../../utils/utils";
 
 export default function Consulting() {
     const [selectedRadio, setSelectedRadio] = useState(0);
+
+    useEffect(() => {
+        go_to_scroll_position(0);
+    }, []);
 
     return (
         <div>
