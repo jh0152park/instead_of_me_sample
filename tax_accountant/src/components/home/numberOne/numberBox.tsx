@@ -7,6 +7,8 @@ export default function NumberBox({ num }: { num: number }) {
 
     return (
         <Center
+            w={displayResolution === "web" ? "70px" : "50px"}
+            h={displayResolution === "web" ? "80px" : "60px"}
             px={displayResolution === "web" ? "10px" : "5px"}
             py={displayResolution === "web" ? "10px" : "5px"}
             backgroundColor={"gray.100"}

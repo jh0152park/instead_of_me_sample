@@ -12,6 +12,7 @@ export default function Pay() {
                     fontSize={"60px"}
                     fontWeight={"bold"}
                     textAlign={"center"}
+                    lineHeight={"1.3"}
                 >
                     월 8만부터 시작하는{" "}
                     <span style={{ color: "#1265F5" }}>합리적인 가격</span>에

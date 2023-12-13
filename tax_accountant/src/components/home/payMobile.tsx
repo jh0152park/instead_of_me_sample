@@ -13,7 +13,12 @@ export default function PayMobile() {
             px={"30px"}
             py={"50px"}
         >
-            <Text fontSize={"20px"} fontWeight={"bold"} textAlign={"center"}>
+            <Text
+                fontSize={"20px"}
+                fontWeight={"bold"}
+                textAlign={"center"}
+                lineHeight={"1.3"}
+            >
                 월 8만부터 시작하는{" "}
                 <span style={{ color: "#1265F5" }}>합리적인 가격</span>에
                 <br />
