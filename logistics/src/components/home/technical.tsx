@@ -3,8 +3,6 @@ import YelloButton from "../common/yelloButton";
 import { useNavigate } from "react-router-dom";
 
 export default function Technical() {
-    const imagePath =
-        "https://github.com/jh0152park/instead_of_me_sample/blob/main/logistics/images/axel-hjEesK4KSDs-unsplash.jpg?raw=true";
     const navigate = useNavigate();
 
     function onClick() {
@@ -30,7 +28,10 @@ export default function Technical() {
                 left={0}
                 zIndex={1}
             >
-                <Image src={imagePath} objectFit={"cover"} />
+                <Image
+                    src={require("../../assets/axel-hjEesK4KSDs-unsplash.jpg")}
+                    objectFit={"cover"}
+                />
             </Box>
 
             <Box zIndex={2} position={"relative"} pl={"80px"} pt={"70px"}>

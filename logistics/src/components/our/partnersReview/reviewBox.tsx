@@ -11,7 +11,7 @@ export default function ReviewBox({
     sector: string;
 }) {
     return (
-        <Center w={"100%"} h={"100%"} color={"black"}>
+        <Center w={"100%"} maxH={"400px"} color={"black"}>
             <VStack
                 w={"90%"}
                 h={"100%"}
@@ -29,7 +29,7 @@ export default function ReviewBox({
                     <FaStar fontSize={"15px"} />
                 </HStack>
 
-                <Text>{reviewText}</Text>
+                <Text lineHeight={"1.2"}>{reviewText}</Text>
 
                 <HStack spacing={4}>
                     <Box
@@ -45,7 +45,7 @@ export default function ReviewBox({
                         <Text
                             fontSize={"12px"}
                             fontWeight={"semibold"}
-                            color={"gray.300"}
+                            color={"black"}
                         >
                             {sector}
                         </Text>
