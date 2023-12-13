@@ -18,13 +18,18 @@ export function FourthOverView() {
                 in={showOverview}
                 direction="bottom"
                 transition={{ enter: { duration: 0.5 } }}
-                style={{ position: "relative" }}
+                style={{
+                    position: "relative",
+                    top: "135px",
+                    width: "100%",
+                    height: "550px",
+                    marginBottom: "250px",
+                }}
             >
                 <Box
                     position="relative"
-                    top="135px"
                     w="100%"
-                    h="550px"
+                    h="100%"
                     textAlign="center"
                     backgroundColor="black"
                 >

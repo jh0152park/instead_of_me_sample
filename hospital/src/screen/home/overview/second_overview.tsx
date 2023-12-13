@@ -19,17 +19,16 @@ export function SecondOverview() {
                 in={showOverview}
                 direction="bottom"
                 transition={{ enter: { duration: 0.5 } }}
-                style={{ position: "relative" }}
+                style={{
+                    position: "relative",
+                    top: "100px",
+                    width: "100%",
+                    paddingTop: "100px",
+                    height: "1000px",
+                    backgroundColor: "#454047",
+                }}
             >
-                <Box
-                    position="relative"
-                    top="100px"
-                    w="100%"
-                    h="1000px"
-                    py="100px"
-                    textAlign="center"
-                    backgroundColor="#454047"
-                >
+                <Box position="relative" w="100%" h="100%" textAlign="center">
                     <Box
                         w="1200px"
                         margin="0 auto"

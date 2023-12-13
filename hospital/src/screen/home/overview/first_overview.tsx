@@ -8,9 +8,14 @@ export function FirstOverView() {
                 in={true}
                 direction="bottom"
                 transition={{ enter: { duration: 0.5 } }}
-                style={{ position: "relative" }}
+                style={{
+                    position: "relative",
+                    width: "100%",
+                    height: "800px",
+                    marginTop: "300px",
+                }}
             >
-                <Box mt="300px" w="100%" h="800px" textAlign="center">
+                <Box w="100%" h="100%" textAlign="center">
                     <Box
                         w="1200px"
                         margin="0 auto"

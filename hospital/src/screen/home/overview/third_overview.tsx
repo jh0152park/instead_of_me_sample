@@ -19,17 +19,14 @@ export function ThirdOverView() {
                 in={showOverview}
                 direction="bottom"
                 transition={{ enter: { duration: 0.5 } }}
-                style={{ position: "relative" }}
+                style={{
+                    position: "relative",
+                    top: "200px",
+                    width: "100%",
+                    height: "900px",
+                }}
             >
-                <Box
-                    position="relative"
-                    top="152px"
-                    mt="50px"
-                    w="100%"
-                    h="900px"
-                    py="100px"
-                    textAlign="center"
-                >
+                <Box position="relative" w="100%" h="100%" textAlign="center">
                     <Box
                         w="1200px"
                         margin="0 auto"

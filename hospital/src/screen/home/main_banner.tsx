@@ -8,7 +8,7 @@ const BannerImg = ["dentist5.jpg", "dentist2.jpg", "clinic.jpg"];
 
 const Btn = styled.svg`
     position: absolute;
-    top: 500px;
+    top: 350px;
     width: 48px;
     height: 48px;
     cursor: pointer;
@@ -53,6 +53,7 @@ export default function MainBanner() {
     const [index, setIndex] = useState(0);
     const [dir, setDir] = useState(1);
     const [leaving, setLeaving] = useState(false);
+
     function toggleLeaving() {
         setLeaving((prev) => !prev);
     }
@@ -74,9 +75,10 @@ export default function MainBanner() {
         setLeaving((prev) => !prev);
         setIndex(pageNumber);
     }
+
     return (
         <>
-            <Box w="100%" h="800px" position="relative">
+            <Box w="100%" h="800px" position="relative" top="152px">
                 <Btn
                     onClick={onClickNext}
                     style={{
@@ -109,7 +111,6 @@ export default function MainBanner() {
                             <>
                                 <Box
                                     key={current}
-                                    mt="152px"
                                     h="800px"
                                     backgroundSize="cover"
                                     backgroundImage={require(`../../resource/images/${current}`)}
