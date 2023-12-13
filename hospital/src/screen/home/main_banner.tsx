@@ -21,7 +21,7 @@ const Btn = styled.svg`
 `;
 const BannerVariants = {
     hidden: (dir: number) => ({
-        x: 1000 * dir,
+        x: 1500 * dir,
         opacity: 0,
     }),
     visible: {
@@ -29,7 +29,7 @@ const BannerVariants = {
         opacity: 1,
     },
     exit: (dir: number) => ({
-        x: -1000 * dir,
+        x: -1500 * dir,
         opacity: 0,
     }),
 };
@@ -104,7 +104,7 @@ export default function MainBanner() {
                         exit="exit"
                         custom={dir}
                         key={index}
-                        transition="0.2s linear"
+                        transition="0.1s linear"
                         cursor="pointer"
                     >
                         {BannerImg.slice(index, index + 1).map((current) => (

@@ -17,6 +17,9 @@ const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;
     position:relative;
   }
+  b {
+    font-weight: 700;
+  }
   a {
     text-decoration: none;
   }

@@ -78,7 +78,7 @@ export function SecondOverview() {
                         <Text
                             textAlign="center"
                             color="#bfbfbf"
-                            fontWeight="100"
+                            fontWeight="200"
                             letterSpacing="12px"
                             margin="10px auto"
                         >

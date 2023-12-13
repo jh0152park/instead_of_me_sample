@@ -28,6 +28,7 @@ export function HeaderTab({ hideHeader }: IHideHeader) {
                         title="병원소개"
                         index={0}
                         ishover={ishover}
+                        menu="about"
                     ></Category>
                     <Category
                         title="프리미엄 교정"

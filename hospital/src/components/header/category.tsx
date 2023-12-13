@@ -9,10 +9,11 @@ import {
 } from "@chakra-ui/react";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const detailList = [
     [
-        ["8가지 약속"],
+        ["우리의 약속"],
         ["진료시간 안내"],
         ["인테리어"],
         ["오시는길"],
@@ -44,7 +45,7 @@ const detailList = [
     [["온라인상담"], ["카톡상담"]],
 ];
 
-export function Category({ title, index, ishover }: any) {
+export function Category({ title, index, ishover, menu }: any) {
     const [hoverTab, setHoverTab] = useState(false);
     const [tabHeight, setTabHeight] = useState("60px");
     const { scrollY } = useScroll();
@@ -67,43 +68,45 @@ export function Category({ title, index, ishover }: any) {
                 onMouseEnter={() => setHoverTab(true)}
                 onMouseLeave={() => setHoverTab(false)}
             >
-                <Center
-                    cursor="pointer"
-                    height={tabHeight}
-                    width="100%"
-                    backgroundColor={hoverTab ? "#8C6AAE" : "white"}
-                    transition="0.3s"
-                >
-                    <Text
-                        fontSize="20px"
-                        color={hoverTab ? "white" : "#404041"}
-                        fontWeight="600"
-                        verticalAlign="middle"
+                <Link to={`/${menu}`} style={{ width: "100%" }}>
+                    <Center
+                        cursor="pointer"
+                        height={tabHeight}
+                        width="100%"
+                        backgroundColor={hoverTab ? "#8C6AAE" : "white"}
+                        transition="0.3s"
                     >
-                        {title}
-                    </Text>
-                </Center>
-                <Collapse in={ishover} style={{ width: "100%" }}>
-                    <Box
-                        margin="10px 0 30px 0"
-                        borderRight="1px"
-                        borderStyle="solid"
-                        borderColor="#c1c1c1"
-                    >
-                        {detailList[index].map((i, index) => (
-                            <Text
-                                key={index}
-                                listStyleType="none"
-                                padding="5px 0"
-                                margin="6px 0"
-                                color="#666"
-                                cursor="pointer"
-                            >
-                                {i}
-                            </Text>
-                        ))}
-                    </Box>
-                </Collapse>
+                        <Text
+                            fontSize="20px"
+                            color={hoverTab ? "white" : "#404041"}
+                            fontWeight="600"
+                            verticalAlign="middle"
+                        >
+                            {title}
+                        </Text>
+                    </Center>
+                    <Collapse in={ishover} style={{ width: "100%" }}>
+                        <Box
+                            margin="10px 0 30px 0"
+                            borderRight="1px"
+                            borderStyle="solid"
+                            borderColor="#c1c1c1"
+                        >
+                            {detailList[index].map((i, index) => (
+                                <Text
+                                    key={index}
+                                    listStyleType="none"
+                                    padding="5px 0"
+                                    margin="6px 0"
+                                    color="#666"
+                                    cursor="pointer"
+                                >
+                                    {i}
+                                </Text>
+                            ))}
+                        </Box>
+                    </Collapse>
+                </Link>
             </Flex>
         </>
     );

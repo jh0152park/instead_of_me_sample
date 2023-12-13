@@ -56,7 +56,11 @@ export function FourthOverView() {
                                 지식을 바탕으로<br></br>안전하고 검증된
                                 치료방법만을 사용합니다.
                             </Text>
-                            <Text color="#bfbfbf" letterSpacing="12px">
+                            <Text
+                                color="#bfbfbf"
+                                letterSpacing="12px"
+                                fontWeight="200"
+                            >
                                 KOREA ORTHODONTIC CLINIC
                             </Text>
                         </Box>

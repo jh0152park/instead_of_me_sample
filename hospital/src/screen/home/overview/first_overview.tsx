@@ -67,7 +67,7 @@ export function FirstOverView() {
                         </Center>
                         <Text
                             color="#bfbfbf"
-                            fontWeight="100"
+                            fontWeight="200"
                             letterSpacing="12px"
                             margin="15px 0 60px 50px"
                         >
