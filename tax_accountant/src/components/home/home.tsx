@@ -16,9 +16,15 @@ import NumberTwoMobile from "./numberTwoMobile";
 import NumberThreeMobile from "./numberThreeMobile";
 import PayMobile from "./payMobile";
 import ConsultingMobile from "./consultingMobile";
+import { useEffect } from "react";
+import { go_to_scroll_position } from "../../utils/utils";
 
 export default function Home() {
     const displayResolution = useRecoilValue(DisplayResolution);
+
+    useEffect(() => {
+        go_to_scroll_position(0);
+    }, []);
 
     return (
         <div>
