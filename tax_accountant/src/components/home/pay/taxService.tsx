@@ -4,12 +4,16 @@ import { IoChatbubblesOutline } from "react-icons/io5";
 import { HiOutlineCalculator } from "react-icons/hi";
 import { FaHubspot } from "react-icons/fa";
 import { TbReceiptTax } from "react-icons/tb";
+import { DisplayResolution } from "../../../global/recoil";
+import { useRecoilValue } from "recoil";
 
 export default function TaxService() {
+    const displayResolution = useRecoilValue(DisplayResolution);
+
     return (
         <VStack
-            w={"300px"}
-            h={"300px"}
+            w={displayResolution === "web" ? "300px" : "220px"}
+            h={displayResolution === "web" ? "300px" : "220px"}
             backgroundColor={"white"}
             borderRadius={"15px"}
             display={"flex"}
@@ -17,7 +21,11 @@ export default function TaxService() {
             border={"1px solid #1265F5"}
         >
             <Center w={"100%"} flex={1} backgroundColor={"#1265F5"}>
-                <Text color={"white"} fontSize={"18px"} fontWeight={"bold"}>
+                <Text
+                    color={"white"}
+                    fontSize={displayResolution === "web" ? "18px" : "12px"}
+                    fontWeight={"bold"}
+                >
                     기본 세무 서비스
                 </Text>
             </Center>

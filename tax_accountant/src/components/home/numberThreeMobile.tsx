@@ -1,36 +1,38 @@
-import { HStack, Text, VStack } from "@chakra-ui/react";
+import { HStack, VStack, Text } from "@chakra-ui/react";
 import NumberCircle from "./common/numberCircle";
 import Content from "./numberThree/content";
 import { HiOutlineCalculator, HiOutlineChartSquareBar } from "react-icons/hi";
 import { LuHelpingHand } from "react-icons/lu";
 
-export default function NumberThree() {
+export default function NumberThreeMobile() {
     return (
         <VStack
-            w={"100dvw"}
-            h={"3500px"}
+            w={"100%"}
             backgroundColor={"white"}
             justifyContent={"center"}
-            spacing={"100px"}
+            py={"50px"}
+            px={"20px"}
+            spacing={"30px"}
         >
-            <HStack spacing={"25px"}>
+            <HStack spacing={"15px"}>
                 <NumberCircle num={3} />
 
-                <VStack alignItems={"flex-start"} spacing={"15px"}>
+                <VStack alignItems={"flex-start"} spacing={"5px"}>
                     <Text
                         color={"black"}
-                        fontSize={"48px"}
+                        fontSize={"22px"}
                         fontWeight={"extrabold"}
                     >
                         귀찮은 잡일을 줄여드립니다
                     </Text>
                     <Text
                         color={"gray.500"}
-                        fontSize={"20px"}
+                        fontSize={"10px"}
                         fontWeight={"semibold"}
                     >
-                        정부와 Top Tier VC로부터 100억을 유치한 세무 IT 연구소가
-                        세무업무를 효율화합니다.
+                        정부와 Top Tier VC로부터 100억을 유치한
+                        <br />
+                        세무 IT 연구소가 세무업무를 효율화합니다.
                     </Text>
                 </VStack>
             </HStack>

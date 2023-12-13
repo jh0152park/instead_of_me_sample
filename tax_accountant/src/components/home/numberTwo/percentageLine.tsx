@@ -1,4 +1,6 @@
 import { Box, HStack, Text } from "@chakra-ui/react";
+import { DisplayResolution } from "../../../global/recoil";
+import { useRecoilValue } from "recoil";
 
 export default function PercentageLine({
     isGradient = false,
@@ -13,20 +15,26 @@ export default function PercentageLine({
     lineWidth: string;
     text: string;
 }) {
+    const displayResolution = useRecoilValue(DisplayResolution);
+
     return (
-        <HStack spacing={"30px"} w={"100%"} h={"50px"}>
+        <HStack
+            spacing={displayResolution === "web" ? "30px" : "15px"}
+            w={"100%"}
+            h={"50px"}
+        >
             <Text
                 color={textColor}
-                fontSize={"18px"}
+                fontSize={displayResolution === "web" ? "18px" : "12px"}
                 fontWeight={"extrabold"}
-                w={"200px"}
+                w={displayResolution === "web" ? "200px" : "160px"}
                 textAlign={"end"}
             >
                 {text}
             </Text>
             <Box
                 w={lineWidth}
-                h={"25px"}
+                h={displayResolution === "web" ? "25px" : "15px"}
                 background={
                     isGradient
                         ? "linear-gradient(90deg, #F8DD08, #1265F5)"
@@ -35,7 +43,14 @@ export default function PercentageLine({
                 borderTopRightRadius={"20px"}
                 borderBottomRightRadius={"20px"}
             />
-            <Text color={"#1265F5"} fontSize={"60px"} fontWeight={"extrabold"}>
+            <Text
+                color={"#1265F5"}
+                fontSize={displayResolution === "web" ? "60px" : "20px"}
+                fontWeight={"extrabold"}
+                transform={
+                    displayResolution === "web" ? "none" : "rotate(90deg)"
+                }
+            >
                 {percentText}
             </Text>
         </HStack>

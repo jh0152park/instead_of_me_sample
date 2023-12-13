@@ -41,7 +41,9 @@ export default function ExpertGrid({
                             <Text>{text2}</Text>
                             <Text>{text3}</Text>
                         </Box>
-                        <Text fontSize={"20px"}>{description}</Text>
+                        <Text fontSize={"20px"} lineHeight={"1.5"}>
+                            {description}
+                        </Text>
                     </VStack>
                 </>
             ) : (
@@ -62,7 +64,9 @@ export default function ExpertGrid({
                             <Text>{text2}</Text>
                             <Text>{text3}</Text>
                         </Box>
-                        <Text fontSize={"20px"}>{description}</Text>
+                        <Text fontSize={"20px"} lineHeight={"1.5"}>
+                            {description}
+                        </Text>
                     </VStack>
                     <Image
                         src={image}

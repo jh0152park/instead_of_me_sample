@@ -1,30 +1,32 @@
-import { HStack, Text, VStack } from "@chakra-ui/react";
+import { HStack, VStack, Text } from "@chakra-ui/react";
 import NumberCircle from "./common/numberCircle";
 import PercentageBox from "./numberTwo/percentageBox";
 
-export default function NumberTwo() {
+export default function NumberTwoMobile() {
     return (
         <VStack
-            w={"100dvw"}
-            h={"900px"}
+            w={"100%"}
             backgroundColor={"white"}
             justifyContent={"center"}
-            spacing={"100px"}
+            pt={"50px"}
+            pb={"100px"}
+            px={"20px"}
+            spacing={"20px"}
         >
-            <HStack spacing={"25px"}>
+            <HStack spacing={"15px"}>
                 <NumberCircle num={2} />
 
-                <VStack alignItems={"flex-start"} spacing={"15px"}>
+                <VStack alignItems={"flex-start"} spacing={"5px"}>
                     <Text
                         color={"black"}
-                        fontSize={"48px"}
+                        fontSize={"22px"}
                         fontWeight={"extrabold"}
                     >
                         비서처럼 꼼꼼하게 챙겨드립니다
                     </Text>
                     <Text
                         color={"gray.500"}
-                        fontSize={"20px"}
+                        fontSize={"10px"}
                         fontWeight={"semibold"}
                     >
                         IOM 고객의 67%가 친절한 상담과 잘 챙겨줌을 장점으로

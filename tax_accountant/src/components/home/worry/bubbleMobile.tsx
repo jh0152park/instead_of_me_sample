@@ -1,6 +1,6 @@
 import { Box, Image, Text, VStack } from "@chakra-ui/react";
 
-export default function Bubble({
+export default function BubbleMobile({
     title,
     description,
 }: {
@@ -8,7 +8,7 @@ export default function Bubble({
     description: string;
 }) {
     return (
-        <Box w={"400px"} h={"350px"} position={"relative"} zIndex={2}>
+        <Box w={"300px"} h={"250px"} position={"relative"} zIndex={2}>
             <Image
                 src={require("../../../assets/message_box.png")}
                 position={"absolute"}
@@ -16,22 +16,22 @@ export default function Bubble({
                 left={0}
                 w={"100%"}
                 h={"100%"}
-                objectFit={"cover"}
+                objectFit={"fill"}
                 zIndex={-1}
             />
 
             <VStack
                 w={"100%"}
                 h={"100%"}
-                pt={"50px"}
-                pb={"150px"}
-                px={"50px"}
+                pt={"40px"}
+                px={"30px"}
+                pb={"120px"}
                 justifyContent={"space-between"}
                 textAlign={"center"}
             >
                 <Text
                     color={"#1265F5"}
-                    fontSize={"36px"}
+                    fontSize={"24px"}
                     fontWeight={"extrabold"}
                 >
                     {title}
@@ -39,7 +39,7 @@ export default function Bubble({
 
                 <Text
                     color={"gray.500"}
-                    fontSize={"24px"}
+                    fontSize={"14px"}
                     fontWeight={"medium"}
                 >
                     {description}

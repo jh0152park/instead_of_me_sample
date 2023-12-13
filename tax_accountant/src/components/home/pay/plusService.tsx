@@ -4,12 +4,16 @@ import { LuHelpingHand } from "react-icons/lu";
 import { HiOutlineChartSquareBar } from "react-icons/hi";
 import { GiSandsOfTime } from "react-icons/gi";
 import { TfiMedall } from "react-icons/tfi";
+import { DisplayResolution } from "../../../global/recoil";
+import { useRecoilValue } from "recoil";
 
 export default function PlusService() {
+    const displayResolution = useRecoilValue(DisplayResolution);
+
     return (
         <VStack
-            w={"600px"}
-            h={"300px"}
+            w={displayResolution === "web" ? "600px" : "300px"}
+            h={displayResolution === "web" ? "300px" : "220px"}
             backgroundColor={"white"}
             borderRadius={"15px"}
             display={"flex"}
@@ -17,7 +21,11 @@ export default function PlusService() {
             border={"1px solid #1265F5"}
         >
             <Center w={"100%"} flex={1} backgroundColor={"#1265F5"}>
-                <Text color={"white"} fontSize={"18px"} fontWeight={"bold"}>
+                <Text
+                    color={"white"}
+                    fontSize={displayResolution === "web" ? "18px" : "12px"}
+                    fontWeight={"bold"}
+                >
                     무료 부가 서비스
                 </Text>
             </Center>

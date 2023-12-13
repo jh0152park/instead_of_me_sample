@@ -1,11 +1,15 @@
 import { Box, Image, Text, VStack } from "@chakra-ui/react";
+import { DisplayResolution } from "../../../global/recoil";
+import { useRecoilValue } from "recoil";
 
 export default function Circle({ per, image }: { per: number; image: any }) {
+    const displayResolution = useRecoilValue(DisplayResolution);
+
     return (
         <VStack spacing={"20px"}>
             <Box
-                w={"300px"}
-                h={"300px"}
+                w={displayResolution === "web" ? "300px" : "200px"}
+                h={displayResolution === "web" ? "300px" : "200px"}
                 position={"relative"}
                 display={"flex"}
                 alignItems={"center"}
@@ -23,11 +27,18 @@ export default function Circle({ per, image }: { per: number; image: any }) {
                     position={"relative"}
                     zIndex={2}
                     textAlign={"center"}
-                    fontSize={"72px"}
+                    fontSize={displayResolution === "web" ? "72px" : "50px"}
                     color={"#797979"}
                     fontWeight={"extrabold"}
                 >
-                    {per} <span style={{ fontSize: 36 }}>%</span>
+                    {per}{" "}
+                    <span
+                        style={{
+                            fontSize: displayResolution === "web" ? 36 : 25,
+                        }}
+                    >
+                        %
+                    </span>
                 </Text>
             </Box>
         </VStack>
