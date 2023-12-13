@@ -5,15 +5,20 @@ import TextItem from "./textItem";
 export default function HeaderMobile() {
     return (
         <Box
-            w="100dvw"
+            w="100%"
             h="100px"
             px={"20px"}
             display={"flex"}
             alignItems={"center"}
             justifyContent={"space-between"}
             position={"fixed"}
+            top={0}
+            left={0}
             backgroundColor={"rgba(255,255,255,0.97)"}
             zIndex={10}
+            // style={{
+            //     WebkitBackfaceVisibility: "hidden",
+            // }}
         >
             <HStack flex={1} display={"flex"} alignItems={"center"}>
                 <Box flex={1}>

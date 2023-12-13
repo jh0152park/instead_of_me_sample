@@ -13,6 +13,8 @@ export default function Header() {
             alignItems={"center"}
             justifyContent={"space-between"}
             position={"fixed"}
+            top={0}
+            left={0}
             backgroundColor={"rgba(255,255,255,0.97)"}
             zIndex={10}
         >
