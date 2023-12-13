@@ -62,6 +62,7 @@ export default function Products() {
                     {products.map((product, index) => (
                         <Product
                             key={index}
+                            size={300}
                             productName={product.name}
                             productCost={product.cost}
                             productImage={product.image}
