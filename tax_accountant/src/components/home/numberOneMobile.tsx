@@ -41,16 +41,18 @@ export default function NumberOneMobile() {
                     <Circle
                         image={require("../../assets/44Circle.png")}
                         per={44}
+                        time={65}
                     />
-                    <MWon text="더 낸 세금" numArray={[7, 3, 0]} />
+                    <MWon text="더 낸 세금" num={730} />
                 </VStack>
 
                 <VStack spacing={"20px"}>
                     <Circle
                         image={require("../../assets/16Circle.png")}
                         per={16}
+                        time={350}
                     />
-                    <MWon text="못 받은 지원금" numArray={[1, 4, 0, 6]} />
+                    <MWon text="못 받은 지원금" num={1406} />
                 </VStack>
             </VStack>
         </VStack>

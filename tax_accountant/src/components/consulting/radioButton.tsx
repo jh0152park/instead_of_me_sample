@@ -46,7 +46,7 @@ export default function RadioButton({
                     w={"7px"}
                     h={"7px"}
                     borderRadius={"50%"}
-                    backgroundColor={isChecked ? "#1265F5" : "#F9F9F9"}
+                    backgroundColor={isChecked ? "#1265F5" : "transparent"}
                 />
             </Box>
 
