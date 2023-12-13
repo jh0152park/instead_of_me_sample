@@ -1,8 +1,9 @@
 interface IProps {
     map: string;
+    image: string;
     address: string;
     worktime: string;
-    information: string;
+    information: string[];
     description: string;
 }
 
