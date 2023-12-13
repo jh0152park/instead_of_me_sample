@@ -6,6 +6,9 @@ import About from "./screen/about";
 import Cafes from "./screen/cafes";
 import Contact from "./screen/contact";
 import Shop from "./screen/shop";
+import { useSetRecoilState } from "recoil";
+import { currentMode } from "./project_common";
+import { useEffect } from "react";
 
 const router = createBrowserRouter([
     {
@@ -38,11 +41,14 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-    return (
-        <>
-            <RouterProvider router={router} />
-        </>
-    );
+    const setCurrentMode = useSetRecoilState(currentMode);
+
+    useEffect(() => {
+        if (document.documentElement.clientWidth < 500)
+            setCurrentMode("mobile");
+    }, []);
+
+    return <RouterProvider router={router} />;
 }
 
 export default App;
