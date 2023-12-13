@@ -1,5 +1,6 @@
 import { Center, HStack, Text } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
+import { go_to_top } from "../../utils/util";
 
 export default function Menus() {
     const navigate = useNavigate();
@@ -13,6 +14,7 @@ export default function Menus() {
                     transition: "all 0.2s linear",
                 }}
                 onClick={() => {
+                    go_to_top(0);
                     navigate("/about");
                 }}
             >
@@ -25,6 +27,7 @@ export default function Menus() {
                     transition: "all 0.2s linear",
                 }}
                 onClick={() => {
+                    go_to_top(0);
                     navigate("/cafes");
                 }}
             >
@@ -37,6 +40,7 @@ export default function Menus() {
                     transition: "all 0.2s linear",
                 }}
                 onClick={() => {
+                    go_to_top(0);
                     navigate("/shop");
                 }}
             >
@@ -49,6 +53,7 @@ export default function Menus() {
                     transition: "all 0.2s linear",
                 }}
                 onClick={() => {
+                    go_to_top(0);
                     navigate("/contact");
                 }}
             >
