@@ -1,4 +1,6 @@
 import { Box, HStack, Text, VStack } from "@chakra-ui/react";
+import { DisplayResolution } from "../../global/recoil";
+import { useRecoilValue } from "recoil";
 
 export default function RadioButton({
     title,
@@ -11,9 +13,11 @@ export default function RadioButton({
     isChecked: boolean;
     onClick: () => void;
 }) {
+    const displayResolution = useRecoilValue(DisplayResolution);
+
     return (
         <HStack
-            w={"450px"}
+            w={displayResolution === "web" ? "450px" : "100%"}
             h={"80px"}
             backgroundColor={isChecked ? "#E0EEFD" : "#F9F9F9"}
             px={"20px"}
@@ -39,18 +43,26 @@ export default function RadioButton({
                 justifyContent={"center"}
             >
                 <Box
-                    w={"10px"}
-                    h={"10px"}
+                    w={"7px"}
+                    h={"7px"}
                     borderRadius={"50%"}
                     backgroundColor={isChecked ? "#1265F5" : "#F9F9F9"}
                 />
             </Box>
 
-            <VStack alignItems={"flex-start"} spacing={"15px"}>
-                <Text fontSize={"16px"} fontWeight={"bold"}>
+            <VStack
+                alignItems={"flex-start"}
+                spacing={displayResolution === "web" ? "15px" : "8px"}
+            >
+                <Text
+                    fontSize={displayResolution === "web" ? "16px" : "14px"}
+                    fontWeight={"bold"}
+                >
                     {title}
                 </Text>
-                <Text fontSize={"14px"}>{description}</Text>
+                <Text fontSize={displayResolution === "web" ? "14px" : "10px"}>
+                    {description}
+                </Text>
             </VStack>
         </HStack>
     );
