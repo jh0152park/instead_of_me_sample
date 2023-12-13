@@ -15,7 +15,10 @@ export default function Logo() {
             }}
             onClick={() => {
                 if (location.pathname === "/") go_to_top(0);
-                else navigate("/");
+                else {
+                    go_to_top(0);
+                    navigate("/");
+                }
             }}
             position="absolute"
             left="40px"
