@@ -76,7 +76,7 @@ export function FirstOverView() {
                     </Box>
                     <Heading
                         color="#444"
-                        fontWeight="700"
+                        fontWeight="600"
                         fontSize="22px"
                         mb="20px"
                     >
