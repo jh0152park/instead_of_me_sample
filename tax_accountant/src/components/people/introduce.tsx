@@ -9,7 +9,7 @@ export default function Introduce() {
                 "linear-gradient(-150deg, #c9c9c960,#c9c9c980, #00000020, #00000050 ,#00000080 )"
             }
             justifyContent={"space-between"}
-            px={"400px"}
+            px={"350px"}
             position={"relative"}
         >
             <VStack alignItems={"flex-start"} spacing={"25px"}>
@@ -34,9 +34,6 @@ export default function Introduce() {
                 src={require("../../assets/business_man.png")}
                 w={"400px"}
                 objectFit={"cover"}
-                position={"absolute"}
-                right={300}
-                bottom={0}
             />
         </HStack>
     );

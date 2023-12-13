@@ -1,10 +1,18 @@
 import { Text, Center } from "@chakra-ui/react";
+import { useRecoilValue } from "recoil";
+import { DisplayResolution } from "../../global/recoil";
 
 export default function BlueSection() {
+    const displayResolution = useRecoilValue(DisplayResolution);
+
     return (
-        <Center w={"100dvw"} h={"400px"} backgroundColor={"#1265F5"}>
+        <Center
+            w={"100dvw"}
+            h={displayResolution === "web" ? "400px" : "150px"}
+            backgroundColor={"#1265F5"}
+        >
             <Text
-                fontSize={"60px"}
+                fontSize={displayResolution === "web" ? "60px" : "20px"}
                 fontWeight={"extrabold"}
                 color={"white"}
                 textAlign={"center"}
