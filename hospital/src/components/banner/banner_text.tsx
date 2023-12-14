@@ -3,9 +3,8 @@ import styled from "styled-components";
 
 const BannerBox = styled(motion.div)`
     position: absolute;
-    top: 30%;
-    margin-left: -600px;
-    left: 51%;
+    top: 25%;
+    left: 30%;
 `;
 const BannerH2 = styled(motion.h2)`
     font-size: 42px;

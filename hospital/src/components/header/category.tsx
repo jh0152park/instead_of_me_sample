@@ -1,13 +1,5 @@
-import {
-    Box,
-    Center,
-    Collapse,
-    Flex,
-    ListItem,
-    Text,
-    UnorderedList,
-} from "@chakra-ui/react";
-import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import { Box, Center, Collapse, Flex, Text } from "@chakra-ui/react";
+import { useMotionValueEvent, useScroll } from "framer-motion";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -100,6 +92,7 @@ export function Category({ title, index, ishover, menu }: any) {
                                     margin="6px 0"
                                     color="#666"
                                     cursor="pointer"
+                                    _hover={{ color: "#8C6AAE" }}
                                 >
                                     {i}
                                 </Text>

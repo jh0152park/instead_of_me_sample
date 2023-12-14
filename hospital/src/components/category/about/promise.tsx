@@ -17,7 +17,12 @@ export function Promise() {
             >
                 <Center maxWidth="1200px" h="100%" m="0 auto" flexDir="column">
                     <Box w="100px" borderBottom="2px solid #603988"></Box>
-                    <Heading fontSize="60px" color="#222" my="40px">
+                    <Heading
+                        fontSize="60px"
+                        color="#222"
+                        my="40px"
+                        fontWeight="600"
+                    >
                         우리의 약속
                     </Heading>
                     <Text
@@ -34,7 +39,7 @@ export function Promise() {
                         h="600px"
                         my="70px"
                         backgroundSize="cover"
-                        backgroundImage={require("../../resource/images/dentist6.jpg")}
+                        backgroundImage={require("../../../resource/images/dentist6.jpg")}
                     >
                         <Box
                             w="100%"

@@ -96,31 +96,23 @@ export default function MainBanner() {
                 >
                     <Box
                         as={motion.div}
-                        w="100%"
-                        position="absolute"
+                        custom={dir}
+                        key={index}
                         variants={BannerVariants}
                         initial="hidden"
                         animate="visible"
                         exit="exit"
-                        custom={dir}
-                        key={index}
+                        w="100%"
+                        position="absolute"
+                        h="800px"
+                        backgroundSize="cover"
+                        backgroundImage={require(`../../resource/images/${BannerImg[index]}`)}
                         transition="0.1s linear"
                         cursor="pointer"
                     >
-                        {BannerImg.slice(index, index + 1).map((current) => (
-                            <>
-                                <Box
-                                    key={current}
-                                    h="800px"
-                                    backgroundSize="cover"
-                                    backgroundImage={require(`../../resource/images/${current}`)}
-                                >
-                                    {index === 0 ? (
-                                        <BannerText index={index}></BannerText>
-                                    ) : null}
-                                </Box>
-                            </>
-                        ))}
+                        {index === 0 ? (
+                            <BannerText index={index}></BannerText>
+                        ) : null}
                         <Center
                             position="absolute"
                             bottom="20px"

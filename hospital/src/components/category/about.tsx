@@ -1,4 +1,4 @@
-import { Box, Center, Flex, HStack, Heading } from "@chakra-ui/react";
+import { Box, Center, Flex, Heading } from "@chakra-ui/react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { Promise } from "./about/promise";
@@ -9,16 +9,17 @@ const InnerBox = styled.div<{ index?: number | null }>`
     padding: 8px 20px;
     cursor: pointer;
     text-align: center;
+    font-weight: 500;
 
     &:last-child {
         border-right: none;
     }
     &:hover {
-        background-color: #36353d;
+        background-color: #603988;
         color: white;
     }
     &:nth-child(${(props) => props.index}) {
-        background-color: #36353d;
+        background-color: #603988;
         color: white;
     }
 `;
@@ -35,7 +36,7 @@ export function About() {
                 w="100%"
                 h="300px"
                 backgroundSize="cover"
-                backgroundImage={require("../resource/images/work/work4.jpg")}
+                backgroundImage={require("../../resource/images/work/work4.jpg")}
             >
                 <Center
                     maxWidth="1200px"
@@ -63,7 +64,7 @@ export function About() {
                     </Flex>
                 </Center>
             </Box>
-            <Promise />
+            <Promise></Promise>
         </>
     );
 }
