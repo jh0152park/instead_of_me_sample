@@ -39,7 +39,7 @@ export function Promise() {
                         h="600px"
                         my="70px"
                         backgroundSize="cover"
-                        backgroundImage={require("../../../resource/images/dentist6.jpg")}
+                        backgroundImage={require("../../../assets/dentist6.jpg")}
                     >
                         <Box
                             w="100%"

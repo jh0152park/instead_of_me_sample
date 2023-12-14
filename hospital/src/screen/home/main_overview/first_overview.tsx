@@ -1,5 +1,5 @@
 import { Box, Center, Heading, Slide, Text } from "@chakra-ui/react";
-import { FirstOverviewCategory } from "../../../components/overview/first_overview_category";
+import { FirstOverviewCategory } from "../../../components/main_overview/first_overview_category";
 
 export function FirstOverView() {
     return (
@@ -22,6 +22,7 @@ export function FirstOverView() {
                         position="relative"
                         textAlign="center"
                     >
+                        {/* 글씨 중간에 있는 선 */}
                         <Box
                             w="100%"
                             position="absolute"
@@ -41,9 +42,8 @@ export function FirstOverView() {
                             color="#603988"
                         >
                             <Text
-                                verticalAlign="middle"
-                                lineHeight="1em"
-                                px="15px"
+                                lineHeight="1.1"
+                                px="12px"
                                 fontSize="78px"
                                 color="white"
                                 backgroundColor="#603988"

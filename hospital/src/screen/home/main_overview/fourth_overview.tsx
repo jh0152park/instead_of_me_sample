@@ -37,7 +37,7 @@ export function FourthOverView() {
                         backgroundSize="cover"
                         w="100%"
                         h="100%"
-                        backgroundImage={require("../../../resource/images/work/overview-9.jpg")}
+                        backgroundImage={require("../../../assets/overview-9.jpg")}
                     >
                         <Box
                             position="absolute"

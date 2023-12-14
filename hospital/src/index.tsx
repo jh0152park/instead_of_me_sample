@@ -1,8 +1,8 @@
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import { reset } from "styled-reset";
-import { createGlobalStyle } from "styled-components";
-import { ChakraProvider } from "@chakra-ui/react";
+import { StyleSheetManager, createGlobalStyle } from "styled-components";
+import { RecoilRoot } from "recoil";
 import "./styles/fonts/pretendard-subset.css";
 
 const GlobalStyle = createGlobalStyle`
@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box; 
     height: 100%;
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow-x: hidden; 
     position:relative;
   }
   b {
@@ -33,7 +33,11 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     <>
-        <GlobalStyle />
-        <App />
+        <RecoilRoot>
+            <StyleSheetManager shouldForwardProp={() => true}>
+                <GlobalStyle />
+                <App />
+            </StyleSheetManager>
+        </RecoilRoot>
     </>
 );

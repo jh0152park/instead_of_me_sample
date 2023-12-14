@@ -1,4 +1,4 @@
-import { Box, Center, Image, Text, VStack } from "@chakra-ui/react";
+import { Box, Center, Image, Text } from "@chakra-ui/react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { go_to_top } from "../../utils/util";
 
@@ -30,7 +30,7 @@ export default function Logo({ text, hideHeader }: ILogoText) {
                 <Image
                     w="50px"
                     h="50px"
-                    src={require("../../resource/images/태극기.png")}
+                    src={require("../../assets/태극기.png")}
                 ></Image>
             </Box>
             <Text fontSize="24px" fontWeight="bold" color="rgba(0,0,0,0.7)">

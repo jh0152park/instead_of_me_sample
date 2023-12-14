@@ -1,4 +1,4 @@
-import { Box, Center, Text } from "@chakra-ui/react";
+import { Box, Center } from "@chakra-ui/react";
 import Logo from "./header/logo";
 import { HeaderTab } from "./header/header_tab";
 import { useMotionValueEvent, useScroll } from "framer-motion";

@@ -37,7 +37,7 @@ const detailList = [
     [["온라인상담"], ["카톡상담"]],
 ];
 
-export function Category({ title, index, ishover, menu }: any) {
+export function Category({ title, number, ishover, menu }: any) {
     const [hoverTab, setHoverTab] = useState(false);
     const [tabHeight, setTabHeight] = useState("60px");
     const { scrollY } = useScroll();
@@ -84,7 +84,7 @@ export function Category({ title, index, ishover, menu }: any) {
                             borderStyle="solid"
                             borderColor="#c1c1c1"
                         >
-                            {detailList[index].map((i, index) => (
+                            {detailList[number].map((i, index) => (
                                 <Text
                                     key={index}
                                     listStyleType="none"

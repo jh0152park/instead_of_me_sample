@@ -1,4 +1,4 @@
-import { Box, Center, Image, Text } from "@chakra-ui/react";
+import { Center } from "@chakra-ui/react";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -62,9 +62,7 @@ export function ThirdOverviewCategory() {
         <>
             <Center mt="20px" gap="40px">
                 <Container>
-                    <InnerImg
-                        src={require(`../../resource/images/work/overview-5.jpg`)}
-                    />
+                    <InnerImg src={require(`../../assets/overview-5.jpg`)} />
                     <Wrapper>
                         <InnerBox>
                             <span style={{ marginTop: "5px" }}>
@@ -86,9 +84,7 @@ export function ThirdOverviewCategory() {
                     </Wrapper>
                 </Container>
                 <Container>
-                    <InnerImg
-                        src={require(`../../resource/images/work/overview-6.jpg`)}
-                    />
+                    <InnerImg src={require(`../../assets/overview-6.jpg`)} />
                     <Wrapper>
                         <InnerBox>
                             <span style={{ marginTop: "5px" }}>언론보도</span>
@@ -109,9 +105,7 @@ export function ThirdOverviewCategory() {
                     </Wrapper>
                 </Container>
                 <Container>
-                    <InnerImg
-                        src={require(`../../resource/images/work/overview-7.jpg`)}
-                    />
+                    <InnerImg src={require(`../../assets/overview-7.jpg`)} />
                     <Wrapper>
                         <InnerBox>
                             <span style={{ marginTop: "5px" }}>
@@ -133,9 +127,7 @@ export function ThirdOverviewCategory() {
                     </Wrapper>
                 </Container>
                 <Container>
-                    <InnerImg
-                        src={require(`../../resource/images/work/overview-8.jpg`)}
-                    />
+                    <InnerImg src={require(`../../assets/overview-8.jpg`)} />
                     <Wrapper>
                         <InnerBox>
                             <span style={{ marginTop: "5px" }}>치료후기</span>

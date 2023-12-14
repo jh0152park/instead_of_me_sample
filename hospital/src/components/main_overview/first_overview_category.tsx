@@ -1,5 +1,4 @@
-import { Box, Center, Image, Text } from "@chakra-ui/react";
-import { motion } from "framer-motion";
+import { Center, Image, Text } from "@chakra-ui/react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -9,7 +8,7 @@ const Wrapper = styled.div`
         div {
             border: 5px solid #8b6bae;
             p {
-                font-size: 68px;
+                font-size: 64px;
                 transition: 0.2s linear;
             }
             img {
@@ -28,10 +27,18 @@ export function FirstOverviewCategory() {
         <>
             <Center mt="100px" gap="30px">
                 <Wrapper>
-                    <Center w="210px" h="210px" border="1px solid #c1c1c1">
-                        <Text fontSize="60px" lineHeight="1" fontWeight="700">
-                            20
-                            <Text fontWeight="400">YEARS</Text>
+                    <Center
+                        w="210px"
+                        h="210px"
+                        border="1px solid #c1c1c1"
+                        fontSize="60px"
+                        lineHeight="1"
+                        fontWeight="700"
+                        flexDir="column"
+                    >
+                        <p>20</p>
+                        <Text fontSize="54px" fontWeight="400">
+                            YEARS
                         </Text>
                     </Center>
                     <Text fontSize="20px" mt="15px" fontWeight="600">
@@ -39,11 +46,17 @@ export function FirstOverviewCategory() {
                     </Text>
                 </Wrapper>
                 <Wrapper>
-                    <Center w="210px" h="210px" border="1px solid #c1c1c1">
-                        <Text fontSize="60px" lineHeight="1" fontWeight="400">
-                            SINCE
-                            <Text fontWeight="700">2003</Text>
-                        </Text>
+                    <Center
+                        w="210px"
+                        h="210px"
+                        border="1px solid #c1c1c1"
+                        fontSize="54px"
+                        lineHeight="1"
+                        fontWeight="700"
+                        flexDir="column"
+                    >
+                        <Text fontWeight="400">SINCE</Text>
+                        <Text fontWeight="700">2003</Text>
                     </Center>
                     <Text fontSize="20px" mt="15px" fontWeight="600">
                         2003년부터 지켜온 치과
@@ -55,7 +68,7 @@ export function FirstOverviewCategory() {
                             w="100%"
                             h="100%"
                             filter="grayscale(100%)"
-                            src={require(`../../resource/images/yonsei_logo.png`)}
+                            src={require(`../../assets/yonsei_logo.png`)}
                         />
                     </Center>
                     <Text fontSize="20px" mt="15px" fontWeight="600">
@@ -67,7 +80,7 @@ export function FirstOverviewCategory() {
                         <Image
                             w="100px"
                             filter="grayscale(100%)"
-                            src={require(`../../resource/images/보건복지부_로고.png`)}
+                            src={require(`../../assets/보건복지부_로고.png`)}
                         />
                     </Center>
                     <Text fontSize="20px" mt="15px" fontWeight="600">
@@ -79,7 +92,7 @@ export function FirstOverviewCategory() {
                         <Image
                             w="100px"
                             filter="grayscale(100%)"
-                            src={require(`../../resource/images/oral_surgery.png`)}
+                            src={require(`../../assets/oral_surgery.png`)}
                         />
                     </Center>
                     <Text fontSize="20px" mt="15px" fontWeight="600">

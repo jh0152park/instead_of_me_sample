@@ -33,7 +33,7 @@ export function Teeth() {
                 w="100%"
                 h="300px"
                 backgroundSize="cover"
-                backgroundImage={require("../../resource/images/work/work4.jpg")}
+                backgroundImage={require("../../assets/work4.jpg")}
             >
                 <Center
                     maxWidth="1200px"

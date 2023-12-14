@@ -10,7 +10,7 @@ export function Invisalign() {
                 backgroundPosition="top center"
                 backgroundColor="white"
                 backgroundRepeat="no-repeat"
-                backgroundImage={require("../../../resource/images/premium-1.jpg")}
+                backgroundImage={require("../../../assets/premium-1.jpg")}
             >
                 <Center
                     maxWidth="1200px"
@@ -40,7 +40,7 @@ export function Invisalign() {
                         w="250px"
                         h="50px"
                         backgroundRepeat="no-repeat"
-                        backgroundImage={require("../../../resource/images/invisalign.png")}
+                        backgroundImage={require("../../../assets/invisalign.png")}
                         my="40px"
                     ></Box>
                     <Text

@@ -2,7 +2,12 @@ import { Box, Center } from "@chakra-ui/react";
 import { BannerText } from "../../components/banner/banner_text";
 import { useState } from "react";
 import styled from "styled-components";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useMotionValue } from "framer-motion";
+import firstImg from "../../assets/dentist5.jpg";
+import secondImg from "../../assets/dentist2.jpg";
+import thirdImg from "../../assets/clinic.jpg";
+
+const imgUrl = [firstImg, secondImg, thirdImg];
 
 const BannerImg = ["dentist5.jpg", "dentist2.jpg", "clinic.jpg"];
 
@@ -20,18 +25,22 @@ const Btn = styled.svg`
     }
 `;
 const BannerVariants = {
-    hidden: (dir: number) => ({
-        x: 1500 * dir,
-        opacity: 0,
-    }),
+    hidden: (dir: number) => {
+        return {
+            x: window.innerWidth * dir,
+            opacity: 0,
+        };
+    },
     visible: {
         x: 0,
         opacity: 1,
     },
-    exit: (dir: number) => ({
-        x: -1500 * dir,
-        opacity: 0,
-    }),
+    exit: (dir: number) => {
+        return {
+            x: -window.innerWidth * dir,
+            opacity: 0,
+        };
+    },
 };
 export const PageDots = styled.button<{ index: number }>`
     width: 15px;
@@ -48,6 +57,14 @@ export const PageDots = styled.button<{ index: number }>`
         border-radius: 5px;
         background-color: #603988;
     }
+`;
+const Slide = styled(motion.div)<{ url: string }>`
+    width: 100%;
+    position: absolute;
+    height: 800px;
+    background-size: cover;
+    background-image: url(${(props) => props.url});
+    cursor: pointer;
 `;
 export default function MainBanner() {
     const [index, setIndex] = useState(0);
@@ -75,7 +92,6 @@ export default function MainBanner() {
         setLeaving((prev) => !prev);
         setIndex(pageNumber);
     }
-
     return (
         <>
             <Box w="100%" h="800px" position="relative" top="152px">
@@ -94,21 +110,25 @@ export default function MainBanner() {
                     initial={false}
                     onExitComplete={toggleLeaving}
                 >
-                    <Box
-                        as={motion.div}
+                    <Slide
                         custom={dir}
                         key={index}
                         variants={BannerVariants}
                         initial="hidden"
                         animate="visible"
                         exit="exit"
-                        w="100%"
-                        position="absolute"
-                        h="800px"
-                        backgroundSize="cover"
-                        backgroundImage={require(`../../resource/images/${BannerImg[index]}`)}
-                        transition="0.1s linear"
-                        cursor="pointer"
+                        transition={{
+                            x: { type: "spring", stiffness: 300, damping: 30 },
+                            opacity: { duration: 0.2 },
+                        }}
+                        drag="x"
+                        dragConstraints={{ left: 0, right: 0 }}
+                        dragElastic={1}
+                        onDragEnd={(e, { offset }) => {
+                            if (offset.x >= 300) onClickPrev();
+                            else if (offset.x <= -300) onClickNext();
+                        }}
+                        url={imgUrl[index]}
                     >
                         {index === 0 ? (
                             <BannerText index={index}></BannerText>
@@ -128,7 +148,7 @@ export default function MainBanner() {
                                 ))}
                             </>
                         </Center>
-                    </Box>
+                    </Slide>
                 </AnimatePresence>
 
                 <Btn
