@@ -9,7 +9,7 @@ import Class from "./screen/class";
 import Directing from "./screen/directing";
 import { useSetRecoilState } from "recoil";
 import { useEffect } from "react";
-import { currentMode } from "../project_common";
+import { currentMode } from "./project_common";
 
 const router = createBrowserRouter([
     {

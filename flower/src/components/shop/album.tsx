@@ -1,6 +1,8 @@
 import { Box, Center, Image, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useRecoilValue } from "recoil";
+import { currentMode } from "../../project_common";
 
 interface IProps {
     image: string;
@@ -10,6 +12,8 @@ interface IProps {
 export default function Album({ image, name }: IProps) {
     const navigage = useNavigate();
     const [isHover, setIsHover] = useState<boolean>(false);
+    const isMobile = useRecoilValue(currentMode) === "mobile";
+    const size = isMobile ? "250px" : "410px";
 
     function toggleHover() {
         setIsHover((prev) => !prev);
@@ -17,8 +21,8 @@ export default function Album({ image, name }: IProps) {
 
     return (
         <Box
-            w="410px"
-            h="410px"
+            w={size}
+            h={size}
             position="relative"
             overflow="hidden"
             boxSizing="border-box"
