@@ -5,6 +5,7 @@ import Products from "../components/home/products";
 import Instagram from "../components/home/instagram";
 import { useRecoilValue } from "recoil";
 import { currentMode } from "../project_common";
+import ProductsMobile from "../components/home/products_mobile";
 
 export default function Home() {
     const isMobile = useRecoilValue(currentMode) === "mobile";
@@ -16,8 +17,16 @@ export default function Home() {
             </Helmet>
 
             <Banner />
-            {/* <Products />
-            <Instagram /> */}
+            {isMobile ? (
+                <>
+                    <ProductsMobile />
+                </>
+            ) : (
+                <>
+                    <Products />
+                    <Instagram />{" "}
+                </>
+            )}
         </>
     );
 }
