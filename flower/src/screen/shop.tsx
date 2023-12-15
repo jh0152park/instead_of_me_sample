@@ -2,7 +2,6 @@ import { Box, Center, HStack, Heading, VStack } from "@chakra-ui/react";
 import Album from "../components/shop/album";
 import { Helmet } from "react-helmet";
 import Footer from "../components/footer";
-import { Link } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { currentMode } from "../project_common";
 

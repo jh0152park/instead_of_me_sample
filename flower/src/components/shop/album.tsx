@@ -13,7 +13,7 @@ export default function Album({ image, name }: IProps) {
     const navigage = useNavigate();
     const [isHover, setIsHover] = useState<boolean>(false);
     const isMobile = useRecoilValue(currentMode) === "mobile";
-    const size = isMobile ? "250px" : "410px";
+    const size = isMobile ? "300px" : "410px";
 
     function toggleHover() {
         setIsHover((prev) => !prev);

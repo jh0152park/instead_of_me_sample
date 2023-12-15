@@ -1,5 +1,7 @@
 import { Box, Center, Image, Text, VStack } from "@chakra-ui/react";
 import { useState } from "react";
+import { useRecoilValue } from "recoil";
+import { currentMode } from "../project_common";
 
 interface IProps {
     product: string;
@@ -9,6 +11,8 @@ interface IProps {
 
 export default function Product({ product, price, image }: IProps) {
     const [isHover, setIsHover] = useState<boolean>(false);
+    const isMobile = useRecoilValue(currentMode) === "mobile";
+    const size = isMobile ? "300px" : "410px";
 
     function toggleHover() {
         setIsHover((prev) => !prev);
@@ -17,8 +21,8 @@ export default function Product({ product, price, image }: IProps) {
     return (
         <VStack>
             <Box
-                w="410px"
-                h="410px"
+                w={size}
+                h={size}
                 _hover={{
                     cursor: "pointer",
                 }}

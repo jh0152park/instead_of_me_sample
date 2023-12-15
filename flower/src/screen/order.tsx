@@ -42,9 +42,9 @@ export default function Order() {
                 color="black"
                 w="100%"
                 minH="100vh"
-                pb="100px"
-                pt="150px"
-                px="95px"
+                py="150px"
+                // pb="100px"
+                // px="95px"
             >
                 <Grid templateColumns="repeat(4, 1fr)" gap="10px">
                     {productData.map((data, index) => (
