@@ -31,7 +31,7 @@ export default function Directing() {
                         />
                     </VStack>
                 ) : (
-                    <HStack justifyContent="flex-start" w="100%">
+                    <HStack>
                         <Product
                             product="공간장식"
                             price={"문의필요"}
