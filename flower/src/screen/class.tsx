@@ -18,7 +18,29 @@ export default function Class() {
                 pt="150px"
                 px="95px"
             >
-                <VStack w="100%">
+                <HStack justifyContent="flex-start" w="100%">
+                    <Product
+                        product="Hobby class"
+                        price={"가격문의"}
+                        image={require("../resources/images/class/hobby.jpg")}
+                    />
+                    <Product
+                        product="Basic class"
+                        price={"가격문의"}
+                        image={require("../resources/images/class/basic.jpg")}
+                    />
+                    <Product
+                        product="Florist class"
+                        price={"가격문의"}
+                        image={require("../resources/images/class/florist.jpg")}
+                    />
+                    <Product
+                        product="Business class"
+                        price={"가격문의"}
+                        image={require("../resources/images/class/business.jpg")}
+                    />
+                </HStack>
+                {/* <VStack w="100%">
                     <HStack justifyContent="flex-start" w="100%">
                         <Product
                             product="Hobby class"
@@ -44,7 +66,7 @@ export default function Class() {
                             image={require("../resources/images/class/business.jpg")}
                         />
                     </HStack>
-                </VStack>
+                </VStack> */}
             </Center>
 
             <Footer />
