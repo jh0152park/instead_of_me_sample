@@ -36,7 +36,7 @@ export default function Shop() {
                         />
                     </VStack>
                 ) : (
-                    <HStack w="100%" justifyContent="space-between" px="95px">
+                    <HStack w="100%" justifyContent="space-between" px="200px">
                         <Album
                             name="Class"
                             image={require("../resources/images/class.jpg")}
