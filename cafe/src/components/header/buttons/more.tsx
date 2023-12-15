@@ -48,6 +48,7 @@ export default function More() {
                     right={0}
                     margin="auto"
                     backgroundImage={image}
+                    backgroundPosition="center center"
                 >
                     <Box
                         w="100%"
