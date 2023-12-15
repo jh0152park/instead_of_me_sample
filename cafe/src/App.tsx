@@ -6,7 +6,7 @@ import About from "./screen/about";
 import Cafes from "./screen/cafes";
 import Contact from "./screen/contact";
 import Shop from "./screen/shop";
-import { useSetRecoilState } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import { currentMode } from "./project_common";
 import { useEffect } from "react";
 
