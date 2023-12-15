@@ -3,8 +3,12 @@ import { Helmet } from "react-helmet";
 import Banner from "../components/home/banner";
 import Products from "../components/home/products";
 import Instagram from "../components/home/instagram";
+import { useRecoilValue } from "recoil";
+import { currentMode } from "../project_common";
 
 export default function Home() {
+    const isMobile = useRecoilValue(currentMode) === "mobile";
+
     return (
         <>
             <Helmet>
@@ -12,8 +16,8 @@ export default function Home() {
             </Helmet>
 
             <Banner />
-            <Products />
-            <Instagram />
+            {/* <Products />
+            <Instagram /> */}
         </>
     );
 }
