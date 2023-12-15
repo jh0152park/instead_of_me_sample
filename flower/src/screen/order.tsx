@@ -4,6 +4,34 @@ import { Helmet } from "react-helmet";
 import Footer from "../components/footer";
 
 export default function Order() {
+    const productData = [
+        {
+            name: "Flower basket",
+            price: 100000,
+            image: require("../resources/images/order/basket.jpg"),
+        },
+        {
+            name: "Hand tied",
+            price: 100000,
+            image: require("../resources/images/order/hand tied.jpg"),
+        },
+        {
+            name: "Cenerpiece",
+            price: 100000,
+            image: require("../resources/images/order/centerpiece.jpg"),
+        },
+        {
+            name: "Plant",
+            price: 100000,
+            image: require("../resources/images/order/plant.jpg"),
+        },
+        {
+            name: "Bouquet",
+            price: "가격문의",
+            image: require("../resources/images/order/bouquet.jpg"),
+        },
+    ];
+
     return (
         <>
             <Helmet>
