@@ -7,6 +7,9 @@ import Shop from "./screen/shop";
 import Order from "./screen/order";
 import Class from "./screen/class";
 import Directing from "./screen/directing";
+import { useSetRecoilState } from "recoil";
+import { useEffect } from "react";
+import { currentMode } from "../project_common";
 
 const router = createBrowserRouter([
     {
@@ -39,11 +42,14 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-    return (
-        <>
-            <RouterProvider router={router} />
-        </>
-    );
+    const setCurrentMode = useSetRecoilState(currentMode);
+
+    useEffect(() => {
+        if (document.documentElement.clientWidth < 500)
+            setCurrentMode("mobile");
+    }, []);
+
+    return <RouterProvider router={router} />;
 }
 
 export default App;
