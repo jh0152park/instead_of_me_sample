@@ -43,7 +43,7 @@ export default function Product({ product, price, image }: IProps) {
                     <Text fontFamily={"Cormorant"} fontSize={"20px"}>
                         {product}
                     </Text>
-                    <Text fontFamily={"Cormorant"} fontSize={"13px"}>
+                    <Text fontFamily={"Cormorant"} fontSize={"15px"}>
                         {typeof price === "number"
                             ? `${price.toLocaleString("ko-KR")} 원`
                             : price}

@@ -4,18 +4,23 @@ import { Helmet } from "react-helmet";
 import Footer from "../components/footer";
 
 export default function Class() {
-    const images = [
-        require("../resources/images/class/hobby.jpg"),
-        require("../resources/images/class/basic.jpg"),
-        require("../resources/images/class/florist.jpg"),
-        require("../resources/images/class/business.jpg"),
-    ];
-
-    const className = [
-        "Hobby Class",
-        "Basic Class",
-        "Florist Class",
-        "Business Class",
+    const classData = [
+        {
+            iamge: require("../resources/images/class/hobby.jpg"),
+            name: "Hobby Class",
+        },
+        {
+            iamge: require("../resources/images/class/basic.jpg"),
+            name: "Basic Class",
+        },
+        {
+            iamge: require("../resources/images/class/florist.jpg"),
+            name: "Florist Class",
+        },
+        {
+            iamge: require("../resources/images/class/business.jpg"),
+            name: "Business Class",
+        },
     ];
 
     return (
@@ -33,12 +38,12 @@ export default function Class() {
                 px="95px"
             >
                 <Grid templateColumns="repeat(4, 1fr)" gap="10px">
-                    {images.map((image, index) => (
+                    {classData.map((data, index) => (
                         <Product
                             key={index}
-                            product={className[index]}
+                            product={data.name}
                             price={"가격문의"}
-                            image={image}
+                            image={data.iamge}
                         />
                     ))}
                 </Grid>
