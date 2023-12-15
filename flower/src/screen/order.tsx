@@ -2,8 +2,11 @@ import { Box, Center, Grid, HStack, VStack } from "@chakra-ui/react";
 import Product from "../components/product";
 import { Helmet } from "react-helmet";
 import Footer from "../components/footer";
+import { currentMode } from "../project_common";
+import { useRecoilValue } from "recoil";
 
 export default function Order() {
+    const isMobile = useRecoilValue(currentMode) === "mobile";
     const productData = [
         {
             name: "Flower basket",
@@ -46,7 +49,12 @@ export default function Order() {
                 // pb="100px"
                 // px="95px"
             >
-                <Grid templateColumns="repeat(4, 1fr)" gap="10px">
+                <Grid
+                    templateColumns={
+                        isMobile ? "repeat(1, 1fr)" : "repeat(4, 1fr)"
+                    }
+                    gap="10px"
+                >
                     {productData.map((data, index) => (
                         <Product
                             key={index}
