@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { currentMode } from "../../project_common";
+import { go_to_top } from "../../utils/util";
 
 interface IProps {
     image: string;
@@ -32,6 +33,7 @@ export default function Album({ image, name }: IProps) {
                 cursor: "pointer",
             }}
             onClick={() => {
+                go_to_top(0);
                 navigage(`/${name.toLowerCase()}`);
             }}
         >
