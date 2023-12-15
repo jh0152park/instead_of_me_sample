@@ -1,7 +1,7 @@
 import { Box, Center, Collapse, Flex, Text } from "@chakra-ui/react";
 
 import { Link } from "react-router-dom";
-import { menuIsClicked } from "../../global/project_commin";
+import { menuIsClicked } from "../../../global/project_commin";
 import { useRecoilState, useSetRecoilState } from "recoil";
 
 const detailList = [

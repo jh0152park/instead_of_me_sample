@@ -7,6 +7,8 @@ import { FourthOverView } from "./home/main_overview/fourth_overview";
 import { useRecoilValue } from "recoil";
 import { displayResolution } from "../global/project_commin";
 import MainBannerMobile from "./home/main_banner_mobile";
+import { FirstOverViewMobile } from "./home/main_overview_mobile/first_overview_mobile";
+import { SecondOverviewMobile } from "./home/main_overview_mobile/second_overview_mobile";
 
 export default function Home() {
     const setDisplayResolution = useRecoilValue(displayResolution);
@@ -26,6 +28,8 @@ export default function Home() {
             ) : (
                 <>
                     <MainBannerMobile />
+                    <FirstOverViewMobile />
+                    <SecondOverviewMobile />
                 </>
             )}
         </>

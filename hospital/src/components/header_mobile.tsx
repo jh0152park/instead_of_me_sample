@@ -1,6 +1,6 @@
 import { Box, Slide } from "@chakra-ui/react";
 import Logo from "./header/logo";
-import { HeaderTabMobile } from "./header/header_tab_mobile";
+import { HeaderTabMobile } from "./header/mobile/header_tab_mobile";
 import { useRecoilState } from "recoil";
 import { menuIsClicked } from "../global/project_commin";
 

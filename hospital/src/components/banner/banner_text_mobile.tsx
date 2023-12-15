@@ -3,11 +3,17 @@ import styled from "styled-components";
 
 const BannerBox = styled(motion.div)`
     position: absolute;
-    top: 25%;
+    top: 20px;
     left: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 `;
 const BannerH2 = styled(motion.h2)`
-    font-size: 42px;
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 18px;
     color: #333;
     p {
         font-style: italic;
@@ -17,11 +23,12 @@ const BannerH1 = styled(motion.h1)`
     font-size: 24px;
     font-weight: 800;
     line-height: 1;
-    margin-bottom: 3rem;
+    margin-bottom: 10px;
     color: #603988;
 `;
 const BannerH3 = styled(motion.h3)`
-    font-size: 28px;
+    width: 100%;
+    font-size: 14px;
     color: #333;
 `;
 const BannerVariants = {

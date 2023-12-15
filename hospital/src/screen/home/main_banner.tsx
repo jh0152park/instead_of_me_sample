@@ -48,7 +48,7 @@ export const PageDots = styled.button<{ index: number }>`
     margin: 0 8px;
     padding: 0;
     cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(0, 0, 0, 0.4);
     &:nth-child(${(props) => props.index + 1}) {
         width: 50px;
         height: 15px;

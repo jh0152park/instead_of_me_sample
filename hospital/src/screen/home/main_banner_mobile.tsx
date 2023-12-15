@@ -29,17 +29,17 @@ const BannerVariants = {
     },
 };
 export const PageDots = styled.button<{ index: number }>`
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
     border: none;
     border-radius: 50%;
-    margin: 0 8px;
+    margin: 0 5px;
     padding: 0;
     cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.7);
     &:nth-child(${(props) => props.index + 1}) {
-        width: 50px;
-        height: 15px;
+        width: 30px;
+        height: 10px;
         border-radius: 5px;
         background-color: #603988;
     }
@@ -47,8 +47,11 @@ export const PageDots = styled.button<{ index: number }>`
 const Slide = styled(motion.div)<{ url: string }>`
     width: 100%;
     position: absolute;
-    height: 300px;
-    background-size: cover;
+    bottom: 0;
+    height: 100%;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    background-size: 620px;
     background-image: url(${(props) => props.url});
     cursor: pointer;
 `;
@@ -80,7 +83,13 @@ export default function MainBannerMobile() {
     }
     return (
         <>
-            <Box w="100%" h="100px" position="relative" top="125px">
+            <Box
+                w="100%"
+                h="400px"
+                position="relative"
+                mt="63px"
+                backgroundColor="#A8E3EF"
+            >
                 <AnimatePresence
                     custom={dir}
                     initial={false}
@@ -113,7 +122,7 @@ export default function MainBannerMobile() {
                             position="absolute"
                             bottom="20px"
                             left="50%"
-                            ml="-100px"
+                            ml="-50px"
                         >
                             <>
                                 {[0, 1, 2].map((i) => (
