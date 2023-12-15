@@ -27,7 +27,9 @@ export default function InstagramMobile() {
                             w={`${SCREEN_WIDTH * 0.1}px`}
                             border="1px solid white"
                         />
-                        <Heading mx="20px">About us</Heading>
+                        <Heading mx="20px" fontSize="20px">
+                            About us
+                        </Heading>
                         <Box
                             w={`${SCREEN_WIDTH * 0.1}px`}
                             border="1px solid white"

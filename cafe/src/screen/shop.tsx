@@ -1,9 +1,12 @@
 import { Box, Center, Grid, HStack, Heading, VStack } from "@chakra-ui/react";
 import Product from "../components/Products/product";
+import { useRecoilValue } from "recoil";
+import { currentMode } from "../project_common";
 
 const SCREEN_WIDTH = window.innerWidth;
 
 export default function Shop() {
+    const isMobile = useRecoilValue(currentMode) === "mobile";
     const products = [
         {
             image: require("../resources/images/shop/product1.jpg"),
@@ -74,26 +77,41 @@ export default function Shop() {
                     <Box mb="200px">
                         <HStack w="100%">
                             <Box
-                                w={`${SCREEN_WIDTH * 0.15}px`}
+                                w={
+                                    isMobile
+                                        ? `${SCREEN_WIDTH * 0.1}px`
+                                        : `${SCREEN_WIDTH * 0.15}px`
+                                }
                                 border="1px solid white"
                             />
-                            <Heading mx="20px">Best Products</Heading>
+                            <Heading
+                                mx="20px"
+                                fontSize={isMobile ? "20px" : "25px"}
+                            >
+                                SHOP
+                            </Heading>
                             <Box
-                                w={`${SCREEN_WIDTH * 0.15}px`}
+                                w={
+                                    isMobile
+                                        ? `${SCREEN_WIDTH * 0.1}px`
+                                        : `${SCREEN_WIDTH * 0.15}px`
+                                }
                                 border="1px solid white"
                             />
                         </HStack>
                     </Box>
 
                     <Grid
-                        templateColumns="repeat(3, 1fr)"
+                        templateColumns={
+                            isMobile ? "repeat(1, 1fr)" : "repeat(3, 1fr)"
+                        }
                         gap="50px"
                         mb="200px"
                     >
                         {products.map((product, index) => (
                             <Product
                                 key={index}
-                                size={400}
+                                size={isMobile ? SCREEN_WIDTH * 0.8 : 400}
                                 productName={product.name}
                                 productCost={product.cost}
                                 productImage={product.image}
