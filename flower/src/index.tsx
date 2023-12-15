@@ -2,6 +2,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import { reset } from "styled-reset";
 import { createGlobalStyle } from "styled-components";
+import { RecoilRoot } from "recoil";
 
 const GlobalStyles = createGlobalStyle`
   ${reset};
@@ -22,7 +23,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     <>
-        <GlobalStyles />
-        <App />
+        <RecoilRoot>
+            <GlobalStyles />
+            <App />
+        </RecoilRoot>
     </>
 );
