@@ -41,7 +41,11 @@ export default function InstagramMobile() {
 
                 <Grid templateColumns="repeat(3, 1fr)" gap="10px" mb="150px">
                     {images.map((image, index) => (
-                        <Box key={index} w="100px" h="100px">
+                        <Box
+                            key={index}
+                            w={`${SCREEN_WIDTH * 0.3}px`}
+                            h={`${SCREEN_WIDTH * 0.3}px`}
+                        >
                             <Image
                                 w="100%"
                                 h="100%"
