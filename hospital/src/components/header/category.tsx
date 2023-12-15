@@ -87,7 +87,6 @@ export function Category({ title, number, ishover, menu }: any) {
                             {detailList[number].map((i, index) => (
                                 <Text
                                     key={index}
-                                    listStyleType="none"
                                     padding="5px 0"
                                     margin="6px 0"
                                     color="#666"

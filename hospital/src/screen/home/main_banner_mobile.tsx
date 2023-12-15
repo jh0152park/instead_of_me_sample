@@ -2,28 +2,14 @@ import { Box, Center } from "@chakra-ui/react";
 import { BannerText } from "../../components/banner/banner_text";
 import { useState } from "react";
 import styled from "styled-components";
-import { motion, AnimatePresence, useMotionValue } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import firstImg from "../../assets/dentist5.jpg";
 import secondImg from "../../assets/dentist2.jpg";
 import thirdImg from "../../assets/clinic.jpg";
+import { BannerTextMobile } from "../../components/banner/banner_text_mobile";
 
 const imgUrl = [firstImg, secondImg, thirdImg];
 
-const BannerImg = ["dentist5.jpg", "dentist2.jpg", "clinic.jpg"];
-
-const Btn = styled.svg`
-    position: absolute;
-    top: 350px;
-    width: 48px;
-    height: 48px;
-    cursor: pointer;
-    z-index: 2;
-    polyline {
-        fill: transparent;
-        stroke: white;
-        stroke-width: 2;
-    }
-`;
 const BannerVariants = {
     hidden: (dir: number) => {
         return {
@@ -61,12 +47,12 @@ export const PageDots = styled.button<{ index: number }>`
 const Slide = styled(motion.div)<{ url: string }>`
     width: 100%;
     position: absolute;
-    height: 800px;
+    height: 300px;
     background-size: cover;
     background-image: url(${(props) => props.url});
     cursor: pointer;
 `;
-export default function MainBanner() {
+export default function MainBannerMobile() {
     const [index, setIndex] = useState(0);
     const [dir, setDir] = useState(1);
     const [leaving, setLeaving] = useState(false);
@@ -94,17 +80,7 @@ export default function MainBanner() {
     }
     return (
         <>
-            <Box w="100%" h="800px" position="relative" top="152px">
-                <Btn
-                    onClick={onClickNext}
-                    style={{
-                        right: "20%",
-                    }}
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <polyline points="7 2 17 12 7 22"></polyline>
-                </Btn>
+            <Box w="100%" h="100px" position="relative" top="125px">
                 <AnimatePresence
                     custom={dir}
                     initial={false}
@@ -131,7 +107,7 @@ export default function MainBanner() {
                         url={imgUrl[index]}
                     >
                         {index === 0 ? (
-                            <BannerText index={index}></BannerText>
+                            <BannerTextMobile index={index}></BannerTextMobile>
                         ) : null}
                         <Center
                             position="absolute"
@@ -150,20 +126,6 @@ export default function MainBanner() {
                         </Center>
                     </Slide>
                 </AnimatePresence>
-
-                <Btn
-                    onClick={onClickPrev}
-                    style={{
-                        left: "20%",
-                    }}
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <polyline
-                        points="7 2 17 12 7 22"
-                        transform="matrix(-1 0 0 1 24 0)"
-                    ></polyline>
-                </Btn>
             </Box>
         </>
     );

@@ -33,7 +33,7 @@ export default function Header() {
                     mt={hideHeader}
                     transition=" 0.3s"
                 >
-                    <Logo text="대한민국치과"></Logo>
+                    <Logo text="대한민국치과" fontsize="24px"></Logo>
                 </Center>
                 <HeaderTab hideHeader={hideHeader}></HeaderTab>
             </Box>

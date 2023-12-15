@@ -2,14 +2,12 @@ import { Box, Center } from "@chakra-ui/react";
 import { BannerText } from "../../components/banner/banner_text";
 import { useState } from "react";
 import styled from "styled-components";
-import { motion, AnimatePresence, useMotionValue } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import firstImg from "../../assets/dentist5.jpg";
 import secondImg from "../../assets/dentist2.jpg";
 import thirdImg from "../../assets/clinic.jpg";
 
 const imgUrl = [firstImg, secondImg, thirdImg];
-
-const BannerImg = ["dentist5.jpg", "dentist2.jpg", "clinic.jpg"];
 
 const Btn = styled.svg`
     position: absolute;
@@ -63,6 +61,7 @@ const Slide = styled(motion.div)<{ url: string }>`
     position: absolute;
     height: 800px;
     background-size: cover;
+    background-position: center;
     background-image: url(${(props) => props.url});
     cursor: pointer;
 `;
@@ -94,7 +93,7 @@ export default function MainBanner() {
     }
     return (
         <>
-            <Box w="100%" h="800px" position="relative" top="152px">
+            <Box w="100vw" h="800px" position="relative" top="152px">
                 <Btn
                     onClick={onClickNext}
                     style={{
