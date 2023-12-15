@@ -2,8 +2,12 @@ import { Box, Center, HStack, VStack } from "@chakra-ui/react";
 import Product from "../components/product";
 import { Helmet } from "react-helmet";
 import Footer from "../components/footer";
+import { useRecoilValue } from "recoil";
+import { currentMode } from "../project_common";
 
 export default function Directing() {
+    const isMobile = useRecoilValue(currentMode) === "mobile";
+
     return (
         <>
             <Helmet>
@@ -18,7 +22,15 @@ export default function Directing() {
                 // pb="100px"
                 // px="95px"
             >
-                <VStack w="100%">
+                {isMobile ? (
+                    <VStack justifyContent="flex-start" w="100%">
+                        <Product
+                            product="공간장식"
+                            price={"문의필요"}
+                            image={require("../resources/images/directing/space.jpg")}
+                        />
+                    </VStack>
+                ) : (
                     <HStack justifyContent="flex-start" w="100%">
                         <Product
                             product="공간장식"
@@ -26,7 +38,7 @@ export default function Directing() {
                             image={require("../resources/images/directing/space.jpg")}
                         />
                     </HStack>
-                </VStack>
+                )}
             </Center>
 
             <Footer />
