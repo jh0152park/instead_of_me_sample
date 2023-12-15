@@ -14,9 +14,9 @@ export default function Directing() {
                 color="black"
                 w="100%"
                 minH="100vh"
-                pb="100px"
-                pt="150px"
-                px="95px"
+                py="150px"
+                // pb="100px"
+                // px="95px"
             >
                 <VStack w="100%">
                     <HStack justifyContent="flex-start" w="100%">
