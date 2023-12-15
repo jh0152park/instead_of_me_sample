@@ -1,9 +1,23 @@
-import { Box, Center, HStack, VStack } from "@chakra-ui/react";
+import { Box, Center, Grid, HStack, VStack } from "@chakra-ui/react";
 import Product from "../components/product";
 import { Helmet } from "react-helmet";
 import Footer from "../components/footer";
 
 export default function Class() {
+    const images = [
+        require("../resources/images/class/hobby.jpg"),
+        require("../resources/images/class/basic.jpg"),
+        require("../resources/images/class/florist.jpg"),
+        require("../resources/images/class/business.jpg"),
+    ];
+
+    const className = [
+        "Hobby Class",
+        "Basic Class",
+        "Florist Class",
+        "Business Class",
+    ];
+
     return (
         <>
             <Helmet>
@@ -18,55 +32,16 @@ export default function Class() {
                 pt="150px"
                 px="95px"
             >
-                <HStack justifyContent="flex-start" w="100%">
-                    <Product
-                        product="Hobby class"
-                        price={"가격문의"}
-                        image={require("../resources/images/class/hobby.jpg")}
-                    />
-                    <Product
-                        product="Basic class"
-                        price={"가격문의"}
-                        image={require("../resources/images/class/basic.jpg")}
-                    />
-                    <Product
-                        product="Florist class"
-                        price={"가격문의"}
-                        image={require("../resources/images/class/florist.jpg")}
-                    />
-                    <Product
-                        product="Business class"
-                        price={"가격문의"}
-                        image={require("../resources/images/class/business.jpg")}
-                    />
-                </HStack>
-                {/* <VStack w="100%">
-                    <HStack justifyContent="flex-start" w="100%">
+                <Grid templateColumns="repeat(4, 1fr)" gap="10px">
+                    {images.map((image, index) => (
                         <Product
-                            product="Hobby class"
+                            key={index}
+                            product={className[index]}
                             price={"가격문의"}
-                            image={require("../resources/images/class/hobby.jpg")}
+                            image={image}
                         />
-                        <Product
-                            product="Basic class"
-                            price={"가격문의"}
-                            image={require("../resources/images/class/basic.jpg")}
-                        />
-                        <Product
-                            product="Florist class"
-                            price={"가격문의"}
-                            image={require("../resources/images/class/florist.jpg")}
-                        />
-                    </HStack>
-
-                    <HStack justifyContent="flex-start" w="100%">
-                        <Product
-                            product="Business class"
-                            price={"가격문의"}
-                            image={require("../resources/images/class/business.jpg")}
-                        />
-                    </HStack>
-                </VStack> */}
+                    ))}
+                </Grid>
             </Center>
 
             <Footer />
