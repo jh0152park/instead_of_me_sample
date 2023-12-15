@@ -5,6 +5,8 @@ import { IoClose } from "react-icons/io5";
 
 import { useNavigate } from "react-router-dom";
 import { go_to_top } from "../../../utils/util";
+import { useRecoilValue } from "recoil";
+import { currentMode } from "../../../project_common";
 
 const SCREEN_WIDTH = document.documentElement.clientWidth;
 const SCREEN_HEIGHT = document.documentElement.clientHeight;
@@ -13,6 +15,8 @@ export default function More() {
     const navigate = useNavigate();
     const [enableMenu, setEnableMenu] = useState(false);
     const image = require("../../../resources/images/menu_image.jpg");
+    const isMobile = useRecoilValue(currentMode) === "mobile";
+    const menuFontSize = isMobile ? "15px" : "30px";
 
     function toggleMenu() {
         setEnableMenu((prev) => !prev);
@@ -51,7 +55,7 @@ export default function More() {
                         display="flex"
                         justifyContent="flex-end"
                         alignItems="center"
-                        pr="40px"
+                        pr={isMobile ? "10px" : "40px"}
                     >
                         <Box
                             fontSize="30px"
@@ -67,7 +71,11 @@ export default function More() {
                         </Box>
                     </Box>
 
-                    <Box pl="100px" h="100%" justifyContent="flex-start">
+                    <Box
+                        pl={isMobile ? "30px" : "100px"}
+                        h="100%"
+                        justifyContent="flex-start"
+                    >
                         <VStack
                             mt="200px"
                             spacing="30px"
@@ -75,7 +83,7 @@ export default function More() {
                         >
                             <Text
                                 fontWeight="bold"
-                                fontSize="30px"
+                                fontSize={menuFontSize}
                                 _hover={{
                                     cursor: "pointer",
                                     color: "rgba(255, 255, 255, 0.4)",
@@ -91,7 +99,7 @@ export default function More() {
                             </Text>
                             <Text
                                 fontWeight="bold"
-                                fontSize="30px"
+                                fontSize={menuFontSize}
                                 _hover={{
                                     cursor: "pointer",
                                     color: "rgba(255, 255, 255, 0.4)",
@@ -107,7 +115,7 @@ export default function More() {
                             </Text>
                             <Text
                                 fontWeight="bold"
-                                fontSize="30px"
+                                fontSize={menuFontSize}
                                 _hover={{
                                     cursor: "pointer",
                                     color: "rgba(255, 255, 255, 0.4)",
@@ -123,7 +131,7 @@ export default function More() {
                             </Text>
                             <Text
                                 fontWeight="bold"
-                                fontSize="30px"
+                                fontSize={menuFontSize}
                                 _hover={{
                                     cursor: "pointer",
                                     color: "rgba(255, 255, 255, 0.4)",

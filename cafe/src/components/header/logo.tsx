@@ -1,10 +1,13 @@
 import { Center, Heading, Text, VStack } from "@chakra-ui/react";
 import { go_to_top } from "../../utils/util";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useRecoilValue } from "recoil";
+import { currentMode } from "../../project_common";
 
 export default function Logo() {
     const navigate = useNavigate();
     const location = useLocation();
+    const isMobile = useRecoilValue(currentMode) === "mobile";
 
     return (
         <Center
@@ -21,10 +24,10 @@ export default function Logo() {
                 }
             }}
             position="absolute"
-            left="40px"
+            left={isMobile ? "10px" : "40px"}
         >
             <VStack h="100%" spacing={0}>
-                <Heading h="70%" fontSize="25px">
+                <Heading h="70%" fontSize={isMobile ? "15px" : "25px"}>
                     KIMBYEONGSEOP
                 </Heading>
                 <Text h="30%" fontSize="10px">
