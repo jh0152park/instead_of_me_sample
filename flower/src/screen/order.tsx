@@ -35,14 +35,14 @@ export default function Order() {
                             price={100000}
                             image={require("../resources/images/order/centerpiece.jpg")}
                         />
-                    </HStack>
-
-                    <HStack justifyContent="flex-start" w="100%">
                         <Product
                             product="Plant"
                             price={100000}
                             image={require("../resources/images/order/plant.jpg")}
                         />
+                    </HStack>
+
+                    <HStack justifyContent="flex-start" w="100%">
                         <Product
                             product="Bouquet"
                             price={"가격문의"}
