@@ -3,12 +3,15 @@ import { BannerText } from "../../components/banner/banner_text";
 import { useState } from "react";
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
+import firstImg from "../../assets/dentist5.jpg";
+import secondImg from "../../assets/dentist2.jpg";
+import thirdImg from "../../assets/clinic.jpg";
 
-const BannerImg = ["dentist5.jpg", "dentist2.jpg", "clinic.jpg"];
+const imgUrl = [firstImg, secondImg, thirdImg];
 
 const Btn = styled.svg`
     position: absolute;
-    top: 500px;
+    top: 350px;
     width: 48px;
     height: 48px;
     cursor: pointer;
@@ -20,15 +23,22 @@ const Btn = styled.svg`
     }
 `;
 const BannerVariants = {
-    hidden: (dir: number) => ({
-        x: window.innerWidth * dir,
-    }),
+    hidden: (dir: number) => {
+        return {
+            x: window.innerWidth * dir,
+            opacity: 0,
+        };
+    },
     visible: {
         x: 0,
+        opacity: 1,
     },
-    exit: (dir: number) => ({
-        x: -window.innerWidth * dir,
-    }),
+    exit: (dir: number) => {
+        return {
+            x: -window.innerWidth * dir,
+            opacity: 0,
+        };
+    },
 };
 export const PageDots = styled.button<{ index: number }>`
     width: 15px;
@@ -38,7 +48,7 @@ export const PageDots = styled.button<{ index: number }>`
     margin: 0 8px;
     padding: 0;
     cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(0, 0, 0, 0.4);
     &:nth-child(${(props) => props.index + 1}) {
         width: 50px;
         height: 15px;
@@ -46,10 +56,20 @@ export const PageDots = styled.button<{ index: number }>`
         background-color: #603988;
     }
 `;
+const Slide = styled(motion.div)<{ url: string }>`
+    width: 100%;
+    position: absolute;
+    height: 800px;
+    background-size: cover;
+    background-position: center;
+    background-image: url(${(props) => props.url});
+    cursor: pointer;
+`;
 export default function MainBanner() {
     const [index, setIndex] = useState(0);
     const [dir, setDir] = useState(1);
     const [leaving, setLeaving] = useState(false);
+
     function toggleLeaving() {
         setLeaving((prev) => !prev);
     }
@@ -73,7 +93,7 @@ export default function MainBanner() {
     }
     return (
         <>
-            <Box w="100%" h="800px" position="relative">
+            <Box w="100vw" h="800px" position="relative" top="152px">
                 <Btn
                     onClick={onClickNext}
                     style={{
@@ -89,36 +109,29 @@ export default function MainBanner() {
                     initial={false}
                     onExitComplete={toggleLeaving}
                 >
-                    <Box
-                        as={motion.div}
-                        // drag="x"
-                        // style={{ x: xValue }}
-                        w="100%"
-                        position="absolute"
+                    <Slide
+                        custom={dir}
+                        key={index}
                         variants={BannerVariants}
                         initial="hidden"
                         animate="visible"
                         exit="exit"
-                        custom={dir}
-                        key={index}
-                        transition="0.2s linear"
-                        cursor="pointer"
+                        transition={{
+                            x: { type: "spring", stiffness: 300, damping: 30 },
+                            opacity: { duration: 0.2 },
+                        }}
+                        drag="x"
+                        dragConstraints={{ left: 0, right: 0 }}
+                        dragElastic={1}
+                        onDragEnd={(e, { offset }) => {
+                            if (offset.x >= 300) onClickPrev();
+                            else if (offset.x <= -300) onClickNext();
+                        }}
+                        url={imgUrl[index]}
                     >
-                        {BannerImg.slice(index, index + 1).map((current) => (
-                            <>
-                                <Box
-                                    key={current}
-                                    mt="152px"
-                                    h="800px"
-                                    backgroundSize="cover"
-                                    backgroundImage={require(`../../resource/images/${current}`)}
-                                >
-                                    {index === 0 ? (
-                                        <BannerText index={index}></BannerText>
-                                    ) : null}
-                                </Box>
-                            </>
-                        ))}
+                        {index === 0 ? (
+                            <BannerText index={index}></BannerText>
+                        ) : null}
                         <Center
                             position="absolute"
                             bottom="20px"
@@ -128,13 +141,14 @@ export default function MainBanner() {
                             <>
                                 {[0, 1, 2].map((i) => (
                                     <PageDots
+                                        key={i}
                                         index={index}
                                         onClick={() => changeIndex(i)}
                                     ></PageDots>
                                 ))}
                             </>
                         </Center>
-                    </Box>
+                    </Slide>
                 </AnimatePresence>
 
                 <Btn

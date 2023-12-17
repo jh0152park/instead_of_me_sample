@@ -1,17 +1,22 @@
-import { Box, Center, Image, Text, VStack } from "@chakra-ui/react";
+import { Box, Center, Image, Text } from "@chakra-ui/react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { go_to_top } from "../../utils/util";
+import { menuIsClicked } from "../../global/project_commin";
+import { useSetRecoilState } from "recoil";
 
 interface ILogoText {
     text?: string;
     hideHeader?: number;
+    fontsize?: string;
 }
 
-export default function Logo({ text, hideHeader }: ILogoText) {
+export default function Logo({ text, hideHeader, fontsize }: ILogoText) {
+    const setIsClicked = useSetRecoilState(menuIsClicked);
     const navigate = useNavigate();
     const location = useLocation();
 
     function onLogoClicked() {
+        setIsClicked(false);
         if (location.pathname === "/") go_to_top(0);
         else navigate("/");
     }
@@ -30,10 +35,10 @@ export default function Logo({ text, hideHeader }: ILogoText) {
                 <Image
                     w="50px"
                     h="50px"
-                    src={require("../../resource/images/태극기.png")}
+                    src={require("../../assets/태극기.png")}
                 ></Image>
             </Box>
-            <Text fontSize="24px" fontWeight="bold" color="rgba(0,0,0,0.7)">
+            <Text fontSize={fontsize} fontWeight="bold" color="rgba(0,0,0,0.7)">
                 {text}
             </Text>
         </Center>
