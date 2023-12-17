@@ -54,7 +54,7 @@ export function SecondOverviewCategoryMobile() {
                 </Container>
                 <Container>
                     <InnerImg src={require(`../../assets/overview-2.jpg`)} />
-                    <InnerBox style={{ top: "45%", color: "white" }}>
+                    <InnerBox style={{ top: "50%", color: "white" }}>
                         <Text>P</Text>
                         <InnerText>+</InnerText>
                         <Text fontSize="14px" fontWeight="600">
@@ -82,7 +82,7 @@ export function SecondOverviewCategoryMobile() {
                 </Container>
                 <Container>
                     <InnerImg src={require(`../../assets/overview-4.jpg`)} />
-                    <InnerBox style={{ top: "45%" }}>
+                    <InnerBox style={{ top: "50%" }}>
                         <Text>P</Text>
                         <InnerText>+</InnerText>
                         <Text fontSize="14px" fontWeight="600">

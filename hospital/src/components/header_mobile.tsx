@@ -6,7 +6,6 @@ import { menuIsClicked } from "../global/project_commin";
 
 export default function HeaderMobile() {
     const [isClicked, setIsClicked] = useRecoilState(menuIsClicked);
-    console.log(isClicked);
     return (
         <>
             <Box
@@ -29,7 +28,6 @@ export default function HeaderMobile() {
                         }}
                         version="1"
                         viewBox="0 0 48 48"
-                        enable-background="new 0 0 48 48"
                         height="2rem"
                         width="2rem"
                         xmlns="http://www.w3.org/2000/svg"

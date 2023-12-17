@@ -21,7 +21,7 @@ export function FirstOverViewMobile() {
                         <Box
                             w="90%"
                             position="absolute"
-                            left="25px"
+                            left="22px"
                             top="15px"
                             borderBottom="1px"
                             borderStyle="solid"
@@ -62,7 +62,6 @@ export function FirstOverViewMobile() {
                             의료진
                         </Center>
                         <Text
-                            color="#bfbfbf"
                             fontWeight="200"
                             letterSpacing="4px"
                             margin="15px 0 30px 0px"

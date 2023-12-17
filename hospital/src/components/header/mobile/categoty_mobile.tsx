@@ -1,8 +1,8 @@
-import { Box, Center, Collapse, Flex, Text } from "@chakra-ui/react";
+import { Box, Collapse, Text } from "@chakra-ui/react";
 
 import { Link } from "react-router-dom";
 import { menuIsClicked } from "../../../global/project_commin";
-import { useRecoilState, useSetRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 
 const detailList = [
     [
@@ -53,9 +53,12 @@ export function CategoryMobile({ number, ishover, path }: any) {
             >
                 <Box px="20px" py="10px" borderBottom="1px solid #c1c1c1">
                     {detailList[number - 1].map((i, index) => (
-                        <Link to={path} onClick={() => setIsClicked(false)}>
+                        <Link
+                            to={path}
+                            onClick={() => setIsClicked(false)}
+                            key={index}
+                        >
                             <Text
-                                key={index}
                                 padding="5px 0"
                                 margin="6px 0"
                                 color="#666"

@@ -141,6 +141,7 @@ export default function MainBanner() {
                             <>
                                 {[0, 1, 2].map((i) => (
                                     <PageDots
+                                        key={i}
                                         index={index}
                                         onClick={() => changeIndex(i)}
                                     ></PageDots>

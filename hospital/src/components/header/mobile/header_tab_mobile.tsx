@@ -1,6 +1,5 @@
 import { IoIosArrowDown } from "react-icons/io";
-import { Flex, Text } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Text } from "@chakra-ui/react";
 import { useState } from "react";
 import styled from "styled-components";
 import { CategoryMobile } from "./categoty_mobile";
@@ -31,7 +30,6 @@ const CategoryBox = styled.div`
 
 export function HeaderTabMobile() {
     const [isClicked, setIsClicked] = useState(0);
-    console.log(isClicked);
     return (
         <>
             <Box>

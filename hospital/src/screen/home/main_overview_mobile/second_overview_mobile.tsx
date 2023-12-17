@@ -1,7 +1,6 @@
 import { Box, Slide, Center, Text, Heading } from "@chakra-ui/react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { useState } from "react";
-import { SecondOverviewCategory } from "../../../components/main_overview/second_overview_category";
 import { SecondOverviewCategoryMobile } from "./../../../components/main_overview_mobile/second_overview_category_mobile";
 
 export function SecondOverviewMobile() {
@@ -62,7 +61,7 @@ export function SecondOverviewMobile() {
                             <Text fontSize="22px">REMIUM 치아교정</Text>
                             <Text
                                 position="absolute"
-                                left="118px"
+                                left="32%"
                                 top="-32px"
                                 fontSize="36px"
                             >

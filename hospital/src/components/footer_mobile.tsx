@@ -19,12 +19,11 @@ export function FooterMobile() {
             <Box w="100%" backgroundColor="#373737">
                 <Box backgroundColor="#4e4e4e">
                     <Box
-                        maxWidth="1200px"
                         margin="auto"
-                        py="20px"
+                        padding="10px 20px"
                         color="#D0D0D0"
                         fontWeight="500"
-                        fontSize="14px"
+                        fontSize="10px"
                         cursor="pointer"
                     >
                         <UpperText>대한민국치과 소개</UpperText>
@@ -33,16 +32,16 @@ export function FooterMobile() {
                     </Box>
                 </Box>
                 <Box
-                    maxWidth="1200px"
+                    padding="15px 20px"
                     margin="auto"
-                    py="20px"
                     color="#D0D0D0"
-                    fontSize="14px"
+                    fontSize="10px"
                 >
                     <Text px="15px">경기도 안산시 단원구 1층</Text>
                     <Text px="15px">
-                        의료기관명칭 : 대한민국치과교정과치과의원 대표자 :
-                        박유현 TEL : 031.111.2222 사업자등록번호 : 123-45-678901
+                        의료기관명칭 : 대한민국치과교정과치과의원
+                        <br></br> 대표자 : 박유현 TEL : 031.111.2222
+                        사업자등록번호 : 123-45-678901
                     </Text>
 
                     <Text px="15px">

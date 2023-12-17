@@ -1,19 +1,18 @@
 import { Box, Center } from "@chakra-ui/react";
-import { BannerText } from "../../components/banner/banner_text";
 import { useState } from "react";
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
-import firstImg from "../../assets/dentist5.jpg";
-import secondImg from "../../assets/dentist2.jpg";
-import thirdImg from "../../assets/clinic.jpg";
 import { BannerTextMobile } from "../../components/banner/banner_text_mobile";
+import firstImg from "../../assets/dentist5_mobile.jpg";
+import secondImg from "../../assets/dentist2_mobile.jpg";
+import thirdImg from "../../assets/clinic.jpg";
 
 const imgUrl = [firstImg, secondImg, thirdImg];
 
 const BannerVariants = {
     hidden: (dir: number) => {
         return {
-            x: window.innerWidth * dir,
+            x: 500 * dir,
             opacity: 0,
         };
     },
@@ -23,7 +22,7 @@ const BannerVariants = {
     },
     exit: (dir: number) => {
         return {
-            x: -window.innerWidth * dir,
+            x: -500 * dir,
             opacity: 0,
         };
     },
@@ -127,6 +126,7 @@ export default function MainBannerMobile() {
                             <>
                                 {[0, 1, 2].map((i) => (
                                     <PageDots
+                                        key={i}
                                         index={index}
                                         onClick={() => changeIndex(i)}
                                     ></PageDots>
